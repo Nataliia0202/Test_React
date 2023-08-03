@@ -1,5 +1,6 @@
 import { GlobalStyle } from "./GlobalStyles";
-
+import { SharedLayout } from "./SharedLayout/SharedLayout";
+import { Container } from "./GlobalStyles";
 
 
 
@@ -9,8 +10,10 @@ import { GlobalStyle } from "./GlobalStyles";
 export const App = () => {
   return (
     <>
-     
-      <GlobalStyle />
+      <Container>
+        <SharedLayout />
+        <GlobalStyle />
+      </Container>
     </>
   );
 };
