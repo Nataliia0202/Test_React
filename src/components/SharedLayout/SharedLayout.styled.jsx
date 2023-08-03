@@ -2,26 +2,26 @@ import styled from 'styled-components';
 import '@fontsource/alata';
 
 export const ContainerHeder = styled.div`
-  width: 320px;
   background-color: #fff;
   border-bottom: 1px solid #7b61ff;
   @media screen and (min-width: 768px) {
-    width: 768px;
+    width: 100vw;
   }
   @media screen and (min-width: 1280px) {
-    width: 1280px;
-    
+    width: 100vw;
   }
 `;
 
 export const Header = styled.header`
   background-color: #fefcff;
   padding: 16px 16px;
-  
+  width: 100vw;
   flex-direction: column;
   align-items: center;
   @media screen and (min-width: 768px) {
     justify-content: space-between;
+    flex-wrap: wrap-reverse;
+    width: 100vw;
   }
 `;
  
@@ -60,6 +60,7 @@ export const SearchForm = styled.form`
   border-radius: 10px;
   box-shadow: 2px 4px 9px #a68dae;
   margin-top: 40px;
+  margin-left: 8px;
 `;
 
 export const SearchInput = styled.input`
@@ -78,8 +79,7 @@ export const IconButton = styled.button`
   left: 170px;
   background-color: #fff;
   border: none;
-  /* width: 24px;
-height: 24px; */
+ 
 `;
 
 export const Wrapper = styled.div`
