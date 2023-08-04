@@ -18,23 +18,22 @@ export const Image = styled.img`
 
 export const NameEvent = styled.p`
   font-size: 16px;
-  line-height: 26px;
-  
-
-  text-align: center;
-  color: rgba(0, 0, 0, 0.87);
+  line-height: 24px;
+  margin-top: 15px;
+  color: #1c1b1f;
+  font-weight: 600;
+  font-family:'Poppins'
 `;
 
 export const DescriptionEvent = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   line-height: 20px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  
-  text-align: center;
-  color: rgba(0, 0, 0, 0.87);
+
+  color: #49454f;
 `;
 export const PlaceEvent = styled.p`
   font-size: 12px;
@@ -44,12 +43,27 @@ export const PlaceEvent = styled.p`
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
 `;
-
+export const WrapperTime = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  bottom: 150px;
+  left: 0;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+`;
 export const TimeEvent = styled.p`
   font-size: 12px;
   line-height: 26px;
-  
-
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
 `;
@@ -107,7 +121,7 @@ export const ListItem = styled.li`
   border-radius: 10px;
   height: 480px;
   width: 332px;
-  
+  position: relative;
 
   @media screen and (min-width: 1280px) {
     width: 302px;
