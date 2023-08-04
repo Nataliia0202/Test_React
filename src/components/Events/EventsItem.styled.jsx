@@ -27,7 +27,12 @@ export const NameEvent = styled.p`
 
 export const DescriptionEvent = styled.p`
   font-size: 12px;
-  line-height: 26px;
+  line-height: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  
   
 
   text-align: center;
