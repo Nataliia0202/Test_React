@@ -2,17 +2,29 @@
 
 import { EventsItem } from "./EventsItem";
 import { List, ListItem } from "./EventsItem.styled";
-import { useSelector } from 'react-redux';
-import { selectEvents } from "redux/selector";
+import { useSelector, useDispatch } from 'react-redux';
+import { selectEvents } from 'redux/selector';
+import { fetchEvents } from "redux/operations";
+
+import { useEffect } from "react";
 
 export const EventList = () => {
+  const events = useSelector(selectEvents);
+  console.log(events);
+  const dispatch = useDispatch();
+  
 
-    const events = useSelector(selectEvents);
+useEffect(() => {
+  dispatch(fetchEvents());
+}, [dispatch]);
+  
+  
 
-    return (
-      <>
-        <List>
-          {events.map(
+  return (
+    <>
+      <List>
+        {events.length !== 0 &&
+          events.map(
             ({
               id,
               name,
@@ -39,7 +51,7 @@ export const EventList = () => {
               );
             }
           )}
-        </List>
-      </>
-    );
-}
+      </List>
+    </>
+  );
+};

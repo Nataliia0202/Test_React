@@ -1,18 +1,7 @@
 import styled from 'styled-components';
 import '@fontsource/alata';
 
-export const ContainerHeder = styled.div`
-  width: 100vw;
- 
-  background-color: #fff;
-  border-bottom: 1px solid #7b61ff;
-  /* @media screen and (min-width: 768px) {
-    width: 100vw;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 100vw;
-  } */
-`;
+
 
 export const Header = styled.header`
   background-color: #fefcff;
@@ -20,6 +9,7 @@ export const Header = styled.header`
   width: 100vw;
   flex-direction: column;
   align-items: center;
+  border-bottom: 1px solid #7b61ff;
   @media screen and (min-width: 768px) {
     justify-content: space-between;
     flex-wrap: wrap-reverse;
