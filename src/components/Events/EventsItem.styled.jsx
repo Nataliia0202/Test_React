@@ -19,7 +19,7 @@ export const Image = styled.img`
 export const NameEvent = styled.p`
   font-size: 16px;
   line-height: 26px;
-  margin-top: 20px;
+  
 
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
@@ -28,7 +28,7 @@ export const NameEvent = styled.p`
 export const DescriptionEvent = styled.p`
   font-size: 12px;
   line-height: 26px;
-  margin-top: 20px;
+  
 
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
@@ -36,7 +36,7 @@ export const DescriptionEvent = styled.p`
 export const PlaceEvent = styled.p`
   font-size: 12px;
   line-height: 26px;
-  margin-top: 20px;
+  
 
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
@@ -45,7 +45,7 @@ export const PlaceEvent = styled.p`
 export const TimeEvent = styled.p`
   font-size: 12px;
   line-height: 26px;
-  margin-top: 20px;
+  
 
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
@@ -54,7 +54,7 @@ export const TimeEvent = styled.p`
 export const CategoryEvent = styled.p`
   font-size: 12px;
   line-height: 26px;
-  margin-top: 20px;
+ 
 
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
@@ -63,7 +63,7 @@ export const CategoryEvent = styled.p`
 export const LevelEvent = styled.p`
   font-size: 12px;
   line-height: 26px;
-  margin-top: 20px;
+  
 
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
