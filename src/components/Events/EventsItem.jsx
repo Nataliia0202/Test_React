@@ -7,6 +7,7 @@ import {
   CategoryEvent,
   LevelEvent,
   WrapperTime,
+  WrapperCategory,
 } from './EventsItem.styled';
 
 export const EventsItem = ({ name, image, place, time, description, category, level}) => {
@@ -20,8 +21,10 @@ export const EventsItem = ({ name, image, place, time, description, category, le
           <TimeEvent>{time}</TimeEvent>
           <PlaceEvent>{place}</PlaceEvent>
         </WrapperTime>
-        <CategoryEvent>{category}</CategoryEvent>
-        <LevelEvent>{level}</LevelEvent>
+        <WrapperCategory>
+          <CategoryEvent>{category}</CategoryEvent>
+          <LevelEvent>{level}</LevelEvent>
+        </WrapperCategory>
       </>
     );
 }
