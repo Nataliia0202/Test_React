@@ -48,7 +48,7 @@ export const WrapperTime = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  bottom: 150px;
+  bottom: 144px;
   left: 0;
   margin: 0;
   font-weight: 700;
@@ -69,12 +69,19 @@ export const TimeEvent = styled.p`
 `;
 
 export const CategoryEvent = styled.p`
-  font-size: 12px;
-  line-height: 26px;
- 
-
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+font-family:'Poppins';
   text-align: center;
-  color: rgba(0, 0, 0, 0.87);
+  color: #7b61ff;
 `;
 
 export const LevelEvent = styled.p`
