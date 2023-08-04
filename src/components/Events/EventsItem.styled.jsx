@@ -10,9 +10,7 @@ export const Image = styled.img`
   border: none;
   object-fit:cover;
   height: 336px;
-   @media screen and (min-width: 768px) {
-    width: 271px;
-  }
+ 
   @media screen and (min-width: 1280px) {
     width: 302px;
   }
@@ -35,8 +33,6 @@ export const DescriptionEvent = styled.p`
   -webkit-line-clamp: 2;
   overflow: hidden;
   
-  
-
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
 `;
@@ -92,8 +88,12 @@ export const List = styled.ul`
   margin-right: auto;
   margin-bottom: 50px;
   margin-top: 50px;
-  @media screen and (min-width: 1024px) {
-    width: 1170px;
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
   }
 `;
 
@@ -106,13 +106,8 @@ export const ListItem = styled.li`
   padding-top: 0px;
   border-radius: 10px;
   height: 480px;
-  @media screen and (min-width: 767px) {
-    width: 271px;
-  }
-
-  @media screen and (max-width: 768px) {
-    width: 332px;
-  }
+  width: 332px;
+  
 
   @media screen and (min-width: 1280px) {
     width: 302px;
