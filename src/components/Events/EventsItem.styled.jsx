@@ -2,10 +2,18 @@ import styled from 'styled-components';
 
 
 export const Image = styled.img`
-  display: flex;
-  max-width: 30%;
-  border-radius: 10px;
+  display: block;
+  position: relative;
+  max-width: 332px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   border: none;
+  @media screen and (min-width: 768px) {
+    width: 271px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 302px;
+  }
 `;
 
 export const NameEvent = styled.p`
@@ -88,6 +96,9 @@ export const ListItem = styled.li`
   align-items: center;
   background-color: #fff;
   padding: 20px 20px;
+  padding-top: 0px;
+  border-radius: 10px;
+  height: 480px;
   @media screen and (min-width: 767px) {
     width: 271px;
   }
@@ -96,7 +107,7 @@ export const ListItem = styled.li`
     width: 332px;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1280px) {
     width: 302px;
   }
 `;

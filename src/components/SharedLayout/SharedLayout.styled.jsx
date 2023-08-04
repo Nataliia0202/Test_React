@@ -4,6 +4,7 @@ import '@fontsource/alata';
 
 
 export const Header = styled.header`
+  display: flex;
   background-color: #fefcff;
   padding: 16px 16px;
   width: 100vw;
@@ -11,6 +12,7 @@ export const Header = styled.header`
   align-items: center;
   border-bottom: 1px solid #7b61ff;
   @media screen and (min-width: 768px) {
+    display: block;
     justify-content: space-between;
     flex-wrap: wrap-reverse;
     width: 100vw;
