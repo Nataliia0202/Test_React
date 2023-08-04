@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchEvents, addNewEvents } from "./operations";
+import { fetchEvents } from "./operations";
 
 const handleRequest = state => {
   state.isLoading = true;
