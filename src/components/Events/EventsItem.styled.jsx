@@ -8,7 +8,9 @@ export const Image = styled.img`
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border: none;
-  @media screen and (min-width: 768px) {
+  object-fit:cover;
+  height: 336px;
+   @media screen and (min-width: 768px) {
     width: 271px;
   }
   @media screen and (min-width: 1280px) {
@@ -30,7 +32,7 @@ export const DescriptionEvent = styled.p`
   line-height: 20px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   overflow: hidden;
   
   
