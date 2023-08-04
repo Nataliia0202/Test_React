@@ -2,14 +2,16 @@ import styled from 'styled-components';
 import '@fontsource/alata';
 
 export const ContainerHeder = styled.div`
+  width: 100vw;
+ 
   background-color: #fff;
   border-bottom: 1px solid #7b61ff;
-  @media screen and (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
     width: 100vw;
   }
   @media screen and (min-width: 1280px) {
     width: 100vw;
-  }
+  } */
 `;
 
 export const Header = styled.header`
@@ -45,9 +47,10 @@ export const Select = styled.select`
   gap: 4px;
   border: none;
   box-shadow: 2px 4px 9px #a68dae;
+  outline: none;
 `;
 export const Options = styled.option`
-  width: 69px;
+  
 `;
 
 export const SearchForm = styled.form`
@@ -61,6 +64,12 @@ export const SearchForm = styled.form`
   box-shadow: 2px 4px 9px #a68dae;
   margin-top: 40px;
   margin-left: 8px;
+  @media screen and (min-width: 768px) {
+    width: 368px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 410px;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -74,10 +83,9 @@ export const SearchInput = styled.input`
 export const IconButton = styled.button`
   display: inline-block;
  margin-left: 10px;
-
-  top: 115px;
-  left: 170px;
-  background-color: #fff;
+margin-top:5px;
+  
+  background-color: transparent;
   border: none;
  
 `;

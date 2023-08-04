@@ -1,9 +1,15 @@
 import { MainPageBg } from "./MainPage.styled";
+import { EventList } from "components/Events/EventList";
+import { Container } from "components/GlobalStyles";
 
 export const ManePage = () => {
     return (
-        <>
-            <MainPageBg></MainPageBg>
-        </>
+      <>
+        <Container>
+          <MainPageBg>
+            <EventList />
+          </MainPageBg>
+        </Container>
+      </>
     );
 }
