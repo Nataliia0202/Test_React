@@ -3,8 +3,8 @@ import React from 'react';
 import { GlobalStyle } from './GlobalStyles';
 import { SharedLayout } from './SharedLayout/SharedLayout';
 
-import { ManePage } from '../pages/MainPage/ManePage';
-
+// import { ManePage } from '../pages/MainPage/ManePage';
+import { AddPage } from 'pages/AddPage/AddPage';
 
 
 export const App = () => {
@@ -13,7 +13,8 @@ export const App = () => {
   return (
     <>
       <SharedLayout />
-        <ManePage></ManePage>
+      {/* <ManePage></ManePage> */}
+      <AddPage/>
       {/* <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route path="events" index element={<ManePage />} />
