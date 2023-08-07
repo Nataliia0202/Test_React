@@ -37,11 +37,33 @@ export const LabelInput = styled.label`
   color: #7b61ff;
   line-height: 16px;
   letter-spacing: 0.4px;
+  margin-top: 15px;
+  
 `;
 
 export const InputTitel = styled.input`
   width: 240px;
-  height: 24px;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid #aca7c3;
+  padding: 12px 16px;
+  outline: none;
+  box-sizing: border-box;
+  margin-top: 5px;
+  @media screen and (min-width: 768px) {
+    width: 308px;
+    
+  }
+  @media screen and (min-width: 1280px) {
+    width: 372px;
+    
+  }
+`;
+
+export const TextareaDescription = styled.input`
+  width: 240px;
+  height: 156px;
+  margin-top: 5px;
   border-radius: 8px;
   border: 1px solid #aca7c3;
   padding: 12px 16px;
@@ -49,12 +71,54 @@ export const InputTitel = styled.input`
   box-sizing: border-box;
 `;
 
-export const TextareaDescription = styled.textarea`
+export const InputTitelDate = styled.input`
   width: 240px;
-  height: 156px;
+  height: 56px;
+  margin-top: 5px;
   border-radius: 8px;
   border: 1px solid #aca7c3;
   padding: 12px 16px;
   outline: none;
   box-sizing: border-box;
+  color: #3f3f3f;
+  margin-top: 5px;
+  @media screen and (min-width: 768px) {
+    width: 308px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 372px;
+  }
+`;
+
+export const InputTitelTime = styled.input`
+  width: 240px;
+  height: 56px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #aca7c3;
+  padding: 12px 16px;
+  outline: none;
+  box-sizing: border-box;
+  @media screen and (min-width: 768px) {
+    width: 308px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 372px;
+  }
+`;
+
+export const ButtonAdd = styled.button`
+  width: 240px;
+  height: 56px;
+  margin-top: 40px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  line-height: 16px;
+  background-color: #7b61ff;
+  padding: 12px 16px;
+  gap: 16px;
+  border-radius: 8px;
+  border: none;
 `;
