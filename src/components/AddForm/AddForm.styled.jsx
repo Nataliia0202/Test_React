@@ -12,9 +12,9 @@ export const TitelForf = styled.h1`
 `;
 
 export const Form = styled.form`
-display: flex;
-align-items: center;
-flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 272px;
   height: 100%;
   padding: 15px;
@@ -24,9 +24,24 @@ flex-direction: column;
   margin: 0 auto;
   @media screen and (min-width: 768px) {
     width: 688px;
+    display: grid;
+    justify-items: center;
+    place-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    align-items: stretch;
+    grid-gap: 16px;
+    grid-column-gap: 0px;
   }
   @media screen and (min-width: 1280px) {
     width: 1280px;
+    display: grid;
+    justify-items: center;
+    place-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-rows: 200px auto 100px;
+    grid-gap: 16px;
+    grid-column-gap: 20px;
+    align-items: start;
   }
 `;
 
@@ -38,6 +53,7 @@ export const LabelInput = styled.label`
   line-height: 16px;
   letter-spacing: 0.4px;
   margin-top: 15px;
+  
   
 `;
 
@@ -60,7 +76,7 @@ export const InputTitel = styled.input`
   }
 `;
 
-export const TextareaDescription = styled.input`
+export const TextareaDescription = styled.textarea`
   width: 240px;
   height: 156px;
   margin-top: 5px;
@@ -69,6 +85,12 @@ export const TextareaDescription = styled.input`
   padding: 12px 16px;
   outline: none;
   box-sizing: border-box;
+  @media screen and (min-width: 768px) {
+    width: 308px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 372px;
+  }
 `;
 
 export const InputTitelDate = styled.input`
@@ -121,4 +143,7 @@ export const ButtonAdd = styled.button`
   gap: 16px;
   border-radius: 8px;
   border: none;
+  @media screen and (min-width: 768px) {
+    width: 193px;
+  }
 `;
