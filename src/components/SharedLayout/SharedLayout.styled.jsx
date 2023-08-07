@@ -12,9 +12,9 @@ export const Header = styled.header`
   align-items: center;
   border-bottom: 1px solid #7b61ff;
   @media screen and (min-width: 768px) {
-    display: block;
+    flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap-reverse;
+    
     width: 100vw;
   }
 `;
@@ -27,7 +27,8 @@ export const Logo = styled.p`
   font-family: Alata;
   line-height: 33.12px;
   margin-right: 50px;
-  @media screen and (min-width: 320px) {
+  @media screen and (min-width: 768px) {
+    margin-right: 0;
   }
 `;
 
@@ -40,6 +41,7 @@ export const Select = styled.select`
   border: none;
   box-shadow: 2px 4px 9px #a68dae;
   outline: none;
+  margin-left: 20px;
 `;
 export const Options = styled.option`
   
@@ -54,10 +56,11 @@ export const SearchForm = styled.form`
   height: 48px;
   border-radius: 10px;
   box-shadow: 2px 4px 9px #a68dae;
-  margin-top: 40px;
-  margin-left: 8px;
+  margin-top: 20px;
   @media screen and (min-width: 768px) {
     width: 368px;
+    margin-top: 0;
+  
   }
   @media screen and (min-width: 1280px) {
     width: 410px;
@@ -84,6 +87,10 @@ margin-top:5px;
 
 export const Wrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
+  flex-direction: column-reverse;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
