@@ -1,6 +1,13 @@
 
-import { TitelForf, Form, LabelInput, InputTitel } from "./AddForm.styled";
+import {
+  TitelForf,
+  Form,
+  LabelInput,
+  InputTitel,
+  TextareaDescription,
+} from './AddForm.styled';
 import { Container } from "components/Container/Container";
+
 
 export const AddForm = () => {
     return (
@@ -11,6 +18,10 @@ export const AddForm = () => {
             <LabelInput>
               Title
               <InputTitel />
+            </LabelInput>
+            <LabelInput>
+              Description
+              <TextareaDescription />
             </LabelInput>
           </Form>
         </Container>

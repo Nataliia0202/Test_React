@@ -12,13 +12,22 @@ export const TitelForf = styled.h1`
 `;
 
 export const Form = styled.form`
+display: flex;
+align-items: center;
+flex-direction: column;
   width: 272px;
   height: 100%;
-  padding: 24px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 2px 4px 9px #a68dae;
   background-color: #fff;
   margin: 0 auto;
+  @media screen and (min-width: 768px) {
+    width: 688px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 1280px;
+  }
 `;
 
 export const LabelInput = styled.label`
@@ -33,6 +42,16 @@ export const LabelInput = styled.label`
 export const InputTitel = styled.input`
   width: 240px;
   height: 24px;
+  border-radius: 8px;
+  border: 1px solid #aca7c3;
+  padding: 12px 16px;
+  outline: none;
+  box-sizing: border-box;
+`;
+
+export const TextareaDescription = styled.textarea`
+  width: 240px;
+  height: 156px;
   border-radius: 8px;
   border: 1px solid #aca7c3;
   padding: 12px 16px;
