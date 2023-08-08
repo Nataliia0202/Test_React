@@ -4,13 +4,15 @@ import styled from 'styled-components';
 export const Image = styled.img`
   display: block;
   position: relative;
-  max-width: 332px;
+  width: 272px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   border: none;
-  object-fit:cover;
+  object-fit: cover;
   height: 336px;
- 
+  @media screen and (min-width: 768px) {
+    width: 322px;
+  }
   @media screen and (min-width: 1280px) {
     width: 302px;
   }
@@ -110,7 +112,7 @@ export const LevelEvent = styled.p`
 export const List = styled.ul`
   display: grid;
   justify-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
   grid-gap: 16px;
   grid-column-gap: 0px;
 
@@ -124,8 +126,9 @@ export const List = styled.ul`
   margin-top: 50px;
   @media screen and (min-width: 768px) {
     width: 768px;
+    grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
   }
-  
+
   @media screen and (min-width: 1280px) {
     width: 1280px;
   }
@@ -140,8 +143,11 @@ export const ListItem = styled.li`
   padding-top: 0px;
   border-radius: 10px;
   height: 480px;
-  width: 332px;
+  width: 272px;
   position: relative;
+  @media screen and (min-width: 768px) {
+    width: 332px;
+  }
 
   @media screen and (min-width: 1280px) {
     width: 302px;
