@@ -79,9 +79,9 @@ export const Container = styled.div`
 
 export const NavButton = styled(NavLink)`
   font-family: 'Poppins';
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
-  width: 67px;
+  width: 80px;
   height: 24px;
   padding: 8px;
   margin-top: 30px;
