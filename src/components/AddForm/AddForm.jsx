@@ -16,6 +16,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectEvents } from "../../redux/selector";
 import { addNewEvents } from 'redux/operations';
 import { useLocation } from 'react-router-dom';
+import { NavButton } from 'components/GlobalStyles';
+import { IconBack } from './IconBack';
 
 export const AddForm = () => {
 
@@ -62,11 +64,16 @@ const events = useSelector(selectEvents);
     setPriority('');
   };
 
-
+  const backLinkHref = location.state?.from ?? '/';
 
     return (
       <>
         <Container>
+          <NavButton to={backLinkHref}>
+            <IconBack styled={{ with: 24, height: 24 }} />
+            Back
+          </NavButton>
+
           <TitelForf>Create new event</TitelForf>
           <Form onSubmit={onSubmitForm}>
             <LabelInput>

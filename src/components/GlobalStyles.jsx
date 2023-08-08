@@ -78,14 +78,18 @@ export const Container = styled.div`
 `
 
 export const NavButton = styled(NavLink)`
+  font-family: 'Poppins';
+  font-weight: 600;
+  display: flex;
+  width: 67px;
+  height: 24px;
   padding: 8px;
+  margin-top: 30px;
   border-radius: 8px;
-  border: 2px solid #7b0d7d;
-  color: #5f115f;
-  background-color: #e0a1f0;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  color: #7b61ff;
+  background-color: transparent;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    color: #ebd2f8;
-    background-color: #b121b6;
-  }
 `;

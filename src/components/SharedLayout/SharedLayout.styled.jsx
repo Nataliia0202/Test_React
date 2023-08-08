@@ -7,7 +7,7 @@ export const Header = styled.header`
   display: flex;
   background-color: #fefcff;
   padding: 16px 16px;
-  width: 100vw;
+  
   flex-direction: column;
   align-items: center;
   border-bottom: 1px solid #7b61ff;
@@ -15,7 +15,7 @@ export const Header = styled.header`
     flex-direction: row;
     justify-content: space-between;
     
-    width: 100vw;
+    
   }
 `;
  
