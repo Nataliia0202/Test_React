@@ -65,6 +65,7 @@ const events = useSelector(selectEvents);
   };
 
   const backLinkHref = location.state?.from ?? '/';
+  
 
     return (
       <>
