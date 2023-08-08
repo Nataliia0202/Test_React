@@ -1,46 +1,36 @@
-import {useEffect, useState} from 'react';
-import {useParams } from 'react-router-dom';
-import { fetchEventDetails } from 'redux/operations';
+import {useEffect} from 'react';
+import { useParams } from 'react-router-dom';
+import {fetchEvents } from 'redux/operations';
 
 import {
   WrapperEventOne,
-  ImgEvOne,
-  NameEventOne,
-  DescriptionEventOne,
-  PlaceEventOne,
-  TimeEventOne,
-  CategoryEventOne,
-  LevelEventOne,
+  
 } from './CurrentEvent.styled';
 
 import { Container } from 'components/GlobalStyles';
 import { NavButton } from 'components/GlobalStyles';
 import { IconBack } from 'components/AddForm/IconBack';
 import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectEvents } from 'redux/selector';
+
+import { EventLi } from './EventLi';
 
 export const CurrentEvent = () => {
-  const [infoEv, setInfoEv] = useState('');
-   const location = useLocation();
+ 
+  const dispatch = useDispatch()
+  const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
-  const { id } = useParams();
-   
-   
+  const {id} = useParams()
+ 
+const events = useSelector(selectEvents);
 
-    useEffect(() => {
-      const getInfoEvent = async () => {
-        try {
-          const respons = await fetchEventDetails(id);
-          setInfoEv(respons);
-          console.log(respons);
-        } catch (error) { }
-      };
-      getInfoEvent()
-    }, [id]);
+
+
+  useEffect(() => {
+    dispatch(fetchEvents());
+  }, [dispatch]);
   
-  if (infoEv === '') {
-    return;
-  }
-  const { name, image, place, time, description, category, level } = infoEv;
     
   
   
@@ -51,15 +41,25 @@ export const CurrentEvent = () => {
             <IconBack styled={{ with: 24, height: 24 }} />
             Back
           </NavButton>
-          <WrapperEventOne>
-            <ImgEvOne src={image} alt="Events" />
-            <NameEventOne>{name}</NameEventOne>
-            <DescriptionEventOne>{description}</DescriptionEventOne>
-            <PlaceEventOne>{place}</PlaceEventOne>
-            <TimeEventOne>{time}</TimeEventOne>
-            <CategoryEventOne>{category}</CategoryEventOne>
-            <LevelEventOne>{level}</LevelEventOne>
-          </WrapperEventOne>
+
+          {events &&
+            events?.map(
+              event =>
+                event.id === id && (
+                  <WrapperEventOne>
+                    <EventLi
+                      key={event.id}
+                      name={event.name}
+                      image={event.image}
+                      place={event.place}
+                      time={event.time}
+                      description={event.description}
+                      category={event.category}
+                      level={event.level}
+                    />
+                  </WrapperEventOne>
+                )
+            )}
         </Container>
       </>
     );

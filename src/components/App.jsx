@@ -12,15 +12,12 @@ export const App = () => {
 
   return (
     <>
-      {/* <SharedLayout />
-      <ManePage></ManePage> */}
-      {/* <AddPage /> */}
-      {/* <CurrentEvent/> */}
+      
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<ManePage />} />
           <Route path="add" element={<AddPage />} />
-          <Route path='events/:id' element ={<CurrentEvent/>}/>
+          <Route path="events/:id" element={<CurrentEvent />} />
         </Route>
       </Routes>
 

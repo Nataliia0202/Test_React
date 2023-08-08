@@ -8,9 +8,14 @@ import {
   LevelEvent,
   WrapperTime,
   WrapperCategory,
+  ButtonMoreInfo,
 } from './EventsItem.styled';
+import { Link, useLocation } from 'react-router-dom';
 
-export const EventsItem = ({ name, image, place, time, description, category, level}) => {
+
+
+export const EventsItem = ({ name, image, place, time, description, category, level, id }) => {
+  const location = useLocation();
     return (
       <>
         <Image src={image} alt="Events" />
@@ -25,6 +30,9 @@ export const EventsItem = ({ name, image, place, time, description, category, le
           <CategoryEvent>{category}</CategoryEvent>
           <LevelEvent>{level}</LevelEvent>
         </WrapperCategory>
+        <Link to={`events/${id}`} state={{ from: location }}>
+          <ButtonMoreInfo>More info</ButtonMoreInfo>
+        </Link>
       </>
     );
 }

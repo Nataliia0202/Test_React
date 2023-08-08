@@ -37,16 +37,18 @@ useEffect(() => {
             }) => {
               return (
                 <ListItem key={id}>
-                  <EventsItem
-                    id={id}
-                    name={name}
-                    image={image}
-                    place={place}
-                    time={time}
-                    description={description}
-                    category={category}
-                    level={level}
-                  />
+                  
+                    <EventsItem
+                      id={id}
+                      name={name}
+                      image={image}
+                      place={place}
+                      time={time}
+                      description={description}
+                      category={category}
+                      level={level}
+                    />
+                  
                 </ListItem>
               );
             }

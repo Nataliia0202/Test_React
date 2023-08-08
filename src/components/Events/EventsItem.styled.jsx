@@ -32,7 +32,7 @@ export const DescriptionEvent = styled.p`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  margin-top:15px;
+  margin-top:10px;
   color: #49454f;
 `;
 export const PlaceEvent = styled.p`
@@ -53,7 +53,7 @@ export const WrapperTime = styled.div`
   font-weight: 700;
   line-height: 1.14;
   text-align: center;
-  text-transform: uppercase;
+  
   color: #fff;
   width: 100%;
   height: 40px;
@@ -136,7 +136,7 @@ export const ListItem = styled.li`
   flex-direction: column;
   align-items: center;
   background-color: #fff;
-  padding: 20px 20px;
+  padding: 15px 15px;
   padding-top: 0px;
   border-radius: 10px;
   height: 480px;
@@ -146,4 +146,21 @@ export const ListItem = styled.li`
   @media screen and (min-width: 1280px) {
     width: 302px;
   }
+`;
+
+export const ButtonMoreInfo = styled.button`
+  width: 114px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 10px 24px;
+  margin-top: 5px;
+  
+  gap: 10px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  background-color: #7b61ff;
+  color:#fff;
+  cursor: pointer;
 `;
