@@ -65,3 +65,18 @@ font-family:'Poppins';
   text-align: center;
   color: #7b61ff;
 `;
+
+export const LevelEventOne = styled.p`
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 600;
+  font-family: 'Poppins';
+
+  text-align: center;
+  color: #ff2b77;
+`;
