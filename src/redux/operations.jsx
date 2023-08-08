@@ -18,6 +18,21 @@ export const fetchEvents = createAsyncThunk(
   }
 );
 
+export const fetchEventDetails = createAsyncThunk(
+  'events/fetchEventDetails',
+  async (id, thunkApi) => {
+    try {
+      const { data } = await axios.get(`/events/${id}`);
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error);
+    }
+  }
+);
+
+
+
 export const addNewEvents = createAsyncThunk(
   'events/addNewEvents',
   async ({ name, image, place, time, description, category, level, id }, thunkApi) => {

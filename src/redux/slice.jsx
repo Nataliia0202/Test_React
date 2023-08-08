@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchEvents } from "./operations";
+import { fetchEvents, addNewEvents } from './operations';
 
 const handleRequest = state => {
   state.isLoading = true;
@@ -33,6 +33,16 @@ const EventsSlice = createSlice({
       handleSuccess(state, action);
     },
     [fetchEvents.rejected](state, action) {
+      handleError(state, action);
+    },
+    [addNewEvents.pending](state) {
+      handleRequest(state);
+    },
+    [addNewEvents.fulfilled](state, action) {
+      state.items.push(action.payload);
+      handleSuccess(state, action);
+    },
+    [addNewEvents.rejected](state, action) {
       handleError(state, action);
     },
   },

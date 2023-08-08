@@ -12,7 +12,7 @@ import {
   SearchForm,
 } from './SharedLayout.styled';
 import { IconSearch } from 'components/IconSearch';
-import { Outlet } from 'react-router-dom';
+
 
 export const SharedLayout = () => {
     return (
@@ -33,9 +33,7 @@ export const SharedLayout = () => {
           </Wrapper>
         </Header>
 
-        <main>
-          <Outlet />
-        </main>
+        
       </>
     );
 }

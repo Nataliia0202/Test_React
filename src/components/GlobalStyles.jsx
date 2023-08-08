@@ -4,6 +4,7 @@ import '@fontsource/alata';
 import '@fontsource/poppins';
 import bgMob from '../components/image/GeoWave2.png';
 import bgDeck from '../components/image/GeoWave22.png';
+import { NavLink } from 'react-router-dom';
 
 export const GlobalStyle = createGlobalStyle`
     body {
@@ -75,3 +76,16 @@ export const Container = styled.div`
     padding: 0 16px;
 
 `
+
+export const NavButton = styled(NavLink)`
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px solid #7b0d7d;
+  color: #5f115f;
+  background-color: #e0a1f0;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    color: #ebd2f8;
+    background-color: #b121b6;
+  }
+`;

@@ -11,43 +11,120 @@ import {
  
 } from './AddForm.styled';
 import { Container } from "components/Container/Container";
-
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectEvents } from "../../redux/selector";
+import { addNewEvents } from 'redux/operations';
+import { useLocation } from 'react-router-dom';
 
 export const AddForm = () => {
+
+const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [date, setDate] = useState('');
+  const [time, setTime] = useState('');
+  const [location, setLocation] = useState('');
+  const [category, setCategory] = useState('');
+  const [priority, setPriority] = useState('');
+
+const events = useSelector(selectEvents);
+  const dispatch = useDispatch();
+  
+
+  const onSubmitForm = event => {
+    event.preventDefault();
+    const checkEvents = events.some(
+      eventP => eventP.name.toLowerCase() === name.toLowerCase()
+    );
+    if (checkEvents === true) {
+      reset();
+     
+    }
+    const newEventt = {
+      name,
+      description,
+      date,
+      time,
+      location,
+      category,
+      priority,
+    };
+    dispatch(addNewEvents(newEventt));
+    reset();
+  };
+  const reset = () => {
+    setName('');
+    setDescription('');
+    setDate('');
+    setTime('');
+    setLocation('');
+    setCategory('');
+    setPriority('');
+  };
+
+
+
     return (
       <>
         <Container>
           <TitelForf>Create new event</TitelForf>
-          <Form>
+          <Form onSubmit={onSubmitForm}>
             <LabelInput>
               Title
-              <InputTitel />
+              <InputTitel
+                type="text"
+                name="name"
+                value={name}
+                onChange={event => setName(event.target.value)}
+              />
             </LabelInput>
             <LabelInput>
               Description
-              <TextareaDescription type="text" min="1" max="99"/>
+              <TextareaDescription
+                type="text"
+                name="description"
+                value={description}
+                onChange={event => setDescription(event.target.value)}
+              />
             </LabelInput>
             <LabelInput htmlFor="start">
               Select date
-              <InputTitelDate type="date" value="2018-07-22" />
+              <InputTitelDate
+                type="date"
+                name="date"
+                value={date}
+                onChange={event => setDate(event.target.value)}
+              />
             </LabelInput>
-            <LabelInput htmlFor="appt">
+            <LabelInput htmlFor="time">
               Select time
               <InputTitelTime
                 type="time"
                 id="appt"
-                name="appt"
+                name="time"
                 min="09:00"
                 max="18:00"
+                value={time}
+                onChange={event => setTime(event.target.value)}
               />
             </LabelInput>
             <LabelInput>
               Location
-              <InputTitel />
+              <InputTitel
+                type="text"
+                name="location"
+                value={location}
+                onChange={event => setLocation(event.target.value)}
+              />
             </LabelInput>
             <LabelInput>
               Category
-              <InputTitel />
+              <InputTitel
+                type="text"
+                name="category"
+                value={category}
+                onChange={event => setCategory(event.target.value)}
+              />
             </LabelInput>
             <LabelInput style={{ color: '#ACA7C3' }}>
               Add picture
@@ -55,7 +132,12 @@ export const AddForm = () => {
             </LabelInput>
             <LabelInput>
               Priority
-              <InputTitel />
+              <InputTitel
+                type="text"
+                name="priority"
+                value={priority}
+                onChange={event => setPriority(event.target.value)}
+              />
             </LabelInput>
             <ButtonAdd type="submit">Add event</ButtonAdd>
           </Form>
