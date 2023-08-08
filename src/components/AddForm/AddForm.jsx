@@ -15,7 +15,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectEvents } from "../../redux/selector";
 import { addNewEvents } from 'redux/operations';
-import { useLocation } from 'react-router-dom';
+
 import { NavButton } from 'components/GlobalStyles';
 import { IconBack } from './IconBack';
 

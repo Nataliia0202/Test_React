@@ -1,6 +1,6 @@
-import { useState, useEffect, Suspense } from 'react';
-import { Outlet, useLocation, useParams } from 'react-router-dom';
-import { fetchEvents, fetchEventDetails } from 'redux/operations';
+import {useEffect} from 'react';
+import {useParams } from 'react-router-dom';
+import {  fetchEventDetails } from 'redux/operations';
 import { useSelector} from 'react-redux';
 import { selectEvents } from 'redux/selector';
 import {
