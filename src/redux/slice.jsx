@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchEvents, addNewEvents } from './operations';
+import { fetchEvents, addNewEvents, fetchEventDel } from './operations';
 
 const handleRequest = state => {
   state.isLoading = true;
@@ -43,6 +43,17 @@ const EventsSlice = createSlice({
       handleSuccess(state, action);
     },
     [addNewEvents.rejected](state, action) {
+      handleError(state, action);
+    },
+    [fetchEventDel.pending](state) {
+      handleRequest(state);
+    },
+    [fetchEventDel.fulfilled](state, action) {
+      const idx = state.items.findIndex(item => item.id === action.payload);
+      state.items.splice(idx, 1);
+      handleSuccess(state, action);
+    },
+    [fetchEventDel.rejected](state, action) {
       handleError(state, action);
     },
   },

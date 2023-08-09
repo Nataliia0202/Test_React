@@ -31,6 +31,19 @@ export const fetchEventDetails = createAsyncThunk(
   }
 );
 
+export const fetchEventDel = createAsyncThunk(
+  'events/fetchEvent',
+  async (id, thunkApi) => {
+    try {
+      const { data } = await axios.delete(`/events/${id}`);
+      console.log(data);
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error);
+    }
+  }
+);
+
 
 
 export const addNewEvents = createAsyncThunk(

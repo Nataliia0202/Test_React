@@ -39,7 +39,7 @@ export const DescriptionEvent = styled.p`
 `;
 export const PlaceEvent = styled.p`
   font-size: 12px;
-  line-height: 26px;
+  
   font-family: 'Poppins';
   text-align: center;
   color: #49454f;
@@ -64,7 +64,7 @@ export const WrapperTime = styled.div`
 `;
 export const TimeEvent = styled.p`
   font-size: 12px;
-  line-height: 26px;
+  
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
 `;

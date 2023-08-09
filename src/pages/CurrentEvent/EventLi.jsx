@@ -8,8 +8,7 @@ import {
   LevelEventOne,
   WrapperTimeOne,
   WrapperCategoryOne,
-  ButtonEventOne,
-  WrapperButtonOne,
+  
 } from './CurrentEvent.styled';
 
 
@@ -24,6 +23,7 @@ export const EventLi = ({
   id,
 }) => {
   
+  
   return (
     <>
       <ImgEvOne src={image} alt="Events" />
@@ -37,10 +37,7 @@ export const EventLi = ({
         <CategoryEventOne>{category}</CategoryEventOne>
         <LevelEventOne>{level}</LevelEventOne>
       </WrapperCategoryOne>
-      <WrapperButtonOne>
-        <ButtonEventOne>Edit</ButtonEventOne>
-        <ButtonEventOne>Delete</ButtonEventOne>
-      </WrapperButtonOne>
+      
     </>
   );
 };

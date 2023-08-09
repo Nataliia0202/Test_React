@@ -1,8 +1,12 @@
 import {useEffect} from 'react';
 import { useParams } from 'react-router-dom';
-import {fetchEvents } from 'redux/operations';
+import { fetchEvents, fetchEventDel } from 'redux/operations';
 import { TitelForf } from 'components/AddForm/AddForm.styled';
-import { WrapperEventOne} from './CurrentEvent.styled';
+import {
+  WrapperEventOne,
+  ButtonEventOne,
+  WrapperButtonOne,
+} from './CurrentEvent.styled';
 
 import { Container } from 'components/GlobalStyles';
 import { NavButton } from 'components/GlobalStyles';
@@ -10,7 +14,7 @@ import { IconBack } from 'components/AddForm/IconBack';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectEvents } from 'redux/selector';
-
+import { Link } from 'react-router-dom';
 import { EventLi } from './EventLi';
 
 export const CurrentEvent = () => {
@@ -56,10 +60,20 @@ const events = useSelector(selectEvents);
                       category={event.category}
                       level={event.level}
                     />
+                    <WrapperButtonOne>
+                      <ButtonEventOne>Edit</ButtonEventOne>
+                      <Link to="/">
+                        <ButtonEventOne
+                          type="button"
+                          onClick={() => dispatch(fetchEventDel(event.id))}
+                        >
+                          Delete
+                        </ButtonEventOne>
+                      </Link>
+                    </WrapperButtonOne>
                   </WrapperEventOne>
                 )
             )}
-          
         </Container>
       </>
     );
