@@ -17,6 +17,7 @@ export const WrapperEventOne = styled.div`
     width: 302px;
     margin: 0;
     margin-top: 40px;
+    
   }
   @media screen and (min-width: 1280px) {
     width: 302px;

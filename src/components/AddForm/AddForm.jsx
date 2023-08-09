@@ -27,7 +27,7 @@ const [name, setName] = useState('');
   const [time, setTime] = useState('');
   const [location, setLocation] = useState('');
   const [category, setCategory] = useState('');
-  const [priority, setPriority] = useState('');
+  const [level, setLevel] = useState('');
 
 const events = useSelector(selectEvents);
   const dispatch = useDispatch();
@@ -49,7 +49,7 @@ const events = useSelector(selectEvents);
       time,
       location,
       category,
-      priority,
+      level,
     };
     dispatch(addNewEvents(newEventt));
     reset();
@@ -61,7 +61,7 @@ const events = useSelector(selectEvents);
     setTime('');
     setLocation('');
     setCategory('');
-    setPriority('');
+    setLevel('');
   };
 
   const backLinkHref = location.state?.from ?? '/';
@@ -111,7 +111,7 @@ const events = useSelector(selectEvents);
                 id="appt"
                 name="time"
                 min="09:00"
-                max="18:00"
+                max="23:00"
                 value={time}
                 onChange={event => setTime(event.target.value)}
               />
@@ -142,9 +142,9 @@ const events = useSelector(selectEvents);
               Priority
               <InputTitel
                 type="text"
-                name="priority"
-                value={priority}
-                onChange={event => setPriority(event.target.value)}
+                name="level"
+                value={level}
+                onChange={event => setLevel(event.target.value)}
               />
             </LabelInput>
             <ButtonAdd type="submit">Add event</ButtonAdd>

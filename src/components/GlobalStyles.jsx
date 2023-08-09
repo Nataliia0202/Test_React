@@ -70,12 +70,15 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
- max-width: 1280px;
-    
-    margin: 0 auto;
-    padding: 0 16px;
+  max-width: 1280px;
 
-`
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+  }
+`;
 
 export const NavButton = styled(NavLink)`
   font-family: 'Poppins';
