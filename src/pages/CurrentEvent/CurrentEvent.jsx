@@ -1,11 +1,8 @@
 import {useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import {fetchEvents } from 'redux/operations';
-
-import {
-  WrapperEventOne,
-  
-} from './CurrentEvent.styled';
+import { TitelForf } from 'components/AddForm/AddForm.styled';
+import { WrapperEventOne} from './CurrentEvent.styled';
 
 import { Container } from 'components/GlobalStyles';
 import { NavButton } from 'components/GlobalStyles';
@@ -42,6 +39,8 @@ const events = useSelector(selectEvents);
             Back
           </NavButton>
 
+          <TitelForf>Galery Opening</TitelForf>
+
           {events &&
             events?.map(
               event =>
@@ -60,6 +59,7 @@ const events = useSelector(selectEvents);
                   </WrapperEventOne>
                 )
             )}
+          
         </Container>
       </>
     );

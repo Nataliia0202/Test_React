@@ -32,10 +32,10 @@ export const WrapperTimeOne = styled.div`
   bottom: 144px;
   left: 0;
   margin: 0;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.14;
   text-align: center;
-  text-transform: uppercase;
+ 
   color: #fff;
   width: 100%;
   height: 40px;
@@ -60,9 +60,10 @@ export const ImgEvOne = styled.img`
   border-top-left-radius: 10px;
   border: none;
   object-fit: cover;
-  height: 336px;
+  height: 168px;
   @media screen and (min-width: 768px) {
     width: 302px;
+    height: 336px;
   }
   @media screen and (min-width: 1280px) {
     width: 302px;
@@ -131,4 +132,31 @@ export const LevelEventOne = styled.p`
 
   text-align: center;
   color: #ff2b77;
+`;
+
+export const ButtonEventOne = styled.button`
+  width: 100px;
+  height: 32px;
+  border-radius: 8px;
+  padding: 10px 24px;
+  margin-top: 5px;
+line-height: 16px;
+  gap: 10px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 12px;
+  border: none;
+  background-color: #7b61ff;
+  color: #fff;
+  cursor: pointer;
+`;
+
+export const WrapperButtonOne = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  gap: 15px;
+  @media screen and (min-width: 768px) {
+    margin-top: 5px;
+  }
 `;
