@@ -10,7 +10,7 @@ import {
   ButtonAdd,
  
 } from './AddForm.styled';
-import { Container } from "components/Container/Container";
+import { Container } from 'components/GlobalStyles';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectEvents } from "../../redux/selector";
