@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 
+
 export const Image = styled.img`
   display: block;
   position: relative;
@@ -11,10 +12,12 @@ export const Image = styled.img`
   object-fit: cover;
   height: 336px;
   @media screen and (min-width: 768px) {
-    width: 322px;
+    width: 332px;
+    height: 280px;
   }
   @media screen and (min-width: 1280px) {
     width: 302px;
+    height: 336px;
   }
 `;
 
@@ -34,15 +37,21 @@ export const DescriptionEvent = styled.p`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  margin-top:10px;
+  margin-top: 10px;
   color: #49454f;
+  @media screen and (min-width: 768px) {
+    -webkit-line-clamp: 4;
+  }
+  @media screen and (min-width: 1280px) {
+    -webkit-line-clamp: 2;
+  }
 `;
 export const PlaceEvent = styled.p`
   font-size: 12px;
-  
+
   font-family: 'Poppins';
   text-align: center;
-  color: #49454f;
+  color: #7b61ff;
 `;
 export const WrapperTime = styled.div`
   position: absolute;
@@ -55,18 +64,24 @@ export const WrapperTime = styled.div`
   font-weight: 700;
   line-height: 1.14;
   text-align: center;
-  
+
   color: #fff;
   width: 100%;
   height: 40px;
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.8);
+  @media screen and (min-width: 768px) {
+    bottom: 200px;
+  }
+  @media screen and (min-width: 1280px) {
+    bottom: 144px;
+  }
 `;
 export const TimeEvent = styled.p`
   font-size: 12px;
-  
+
   text-align: center;
-  color: rgba(0, 0, 0, 0.87);
+  color: #7b61ff;
 `;
 
 export const CategoryEvent = styled.p`
@@ -134,6 +149,43 @@ export const List = styled.ul`
   }
 `;
 
+
+
+export const ButtonMoreInfo = styled.button`
+  position: absolute;
+  /* display: none; */
+  width: 114px;
+  height: 40px;
+  border-radius: 8px;
+  padding: 10px 24px;
+
+  bottom: 10px;
+  gap: 10px;
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  background-color: #7b61ff;
+  color: #fff;
+  cursor: pointer;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.06);
+  @media screen and (min-width: 768px) {
+    margin-right: 0;
+  }
+}
+  
+  @media screen and (min-width: 768px) {
+    bottom: 20px;
+  right: 15px;
+  }
+  @media screen and (min-width: 768px) {
+    bottom: 10px;
+  }
+`;
 export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
@@ -145,6 +197,10 @@ export const ListItem = styled.li`
   height: 480px;
   width: 272px;
   position: relative;
+  &:hover {
+    display: ${props => props.display};
+  }
+
   @media screen and (min-width: 768px) {
     width: 332px;
   }
@@ -152,21 +208,4 @@ export const ListItem = styled.li`
   @media screen and (min-width: 1280px) {
     width: 302px;
   }
-`;
-
-export const ButtonMoreInfo = styled.button`
-  width: 114px;
-  height: 40px;
-  border-radius: 8px;
-  padding: 10px 24px;
-  margin-top: 5px;
-  
-  gap: 10px;
-  font-family: 'Poppins';
-  font-weight: 500;
-  font-size: 14px;
-  border: none;
-  background-color: #7b61ff;
-  color:#fff;
-  cursor: pointer;
 `;

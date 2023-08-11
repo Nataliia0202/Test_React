@@ -141,7 +141,7 @@ export const ButtonEventOne = styled.button`
   border-radius: 8px;
   padding: 10px 24px;
   margin-top: 5px;
-line-height: 16px;
+  line-height: 16px;
   gap: 10px;
   font-family: 'Poppins';
   font-weight: 500;
@@ -150,6 +150,15 @@ line-height: 16px;
   background-color: #7b61ff;
   color: #fff;
   cursor: pointer;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.06);
+    @media screen and (min-width: 768px) {
+      margin-right: 0;
+    }
+  }
 `;
 
 export const WrapperButtonOne = styled.div`

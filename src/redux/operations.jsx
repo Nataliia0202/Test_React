@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
+import { toastSuccessAdd, toastSuccessDelete, toastError } from 'components/Services/toast';
 
 axios.defaults.baseURL = 'https://64ca905f700d50e3c70510c5.mockapi.io';
 
@@ -9,7 +9,6 @@ export const fetchEvents = createAsyncThunk(
   async (_, thunkApi) => {
     try {
         const events = await axios.get('/events');
-        console.log(events.data);
       return events.data;
     } catch (error) {
     
@@ -23,9 +22,9 @@ export const fetchEventDetails = createAsyncThunk(
   async (id, thunkApi) => {
     try {
       const { data } = await axios.get(`/events/${id}`);
-      console.log(data);
       return data;
     } catch (error) {
+      toastError()
       return thunkApi.rejectWithValue(error);
     }
   }
@@ -36,9 +35,10 @@ export const fetchEventDel = createAsyncThunk(
   async (id, thunkApi) => {
     try {
       const { data } = await axios.delete(`/events/${id}`);
-      console.log(data);
+      toastSuccessDelete();
       return data;
     } catch (error) {
+      toastError();
       return thunkApi.rejectWithValue(error);
     }
   }
@@ -60,8 +60,10 @@ export const addNewEvents = createAsyncThunk(
         level,
         id,
       });
+      toastSuccessAdd();
       return events.data;
     } catch (error) {
+      toastError();
       return thunkApi.rejectWithValue(error);
     }
   }

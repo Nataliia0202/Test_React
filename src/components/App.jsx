@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import { GlobalStyle } from './GlobalStyles';
 
 import { Routes, Route } from 'react-router-dom';
@@ -12,7 +12,6 @@ export const App = () => {
 
   return (
     <>
-      
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<ManePage />} />
@@ -22,6 +21,7 @@ export const App = () => {
       </Routes>
 
       <GlobalStyle />
+      <ToastContainer autoClose={3000} limit={1} />
     </>
   );
 };

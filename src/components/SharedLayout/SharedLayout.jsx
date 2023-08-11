@@ -1,5 +1,6 @@
 
 
+import { Link } from 'react-router-dom';
 import {
  
   Header,
@@ -18,7 +19,11 @@ export const SharedLayout = () => {
     return (
       <>
         <Header>
-          <Logo>Event Planner</Logo>
+          <Link to={'/'}>
+           
+            <Logo>Event Planner</Logo>
+          </Link>
+
           <Wrapper>
             <SearchForm>
               <SearchInput type="text" placeholder="Search by keywords" />
@@ -32,8 +37,6 @@ export const SharedLayout = () => {
             </Select>
           </Wrapper>
         </Header>
-
-        
       </>
     );
 }

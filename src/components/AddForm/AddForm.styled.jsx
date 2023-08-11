@@ -143,6 +143,16 @@ export const ButtonAdd = styled.button`
   gap: 16px;
   border-radius: 8px;
   border: none;
+  cursor: pointer;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.06);
+    @media screen and (min-width: 768px) {
+      margin-right: 0;
+    }
+  }
   @media screen and (min-width: 768px) {
     width: 193px;
   }

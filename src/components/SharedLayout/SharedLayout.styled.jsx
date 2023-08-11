@@ -27,9 +27,15 @@ export const Logo = styled.p`
   font-family: Alata;
   line-height: 33.12px;
   margin-right: 50px;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.06);
   @media screen and (min-width: 768px) {
     margin-right: 0;
   }
+}
 `;
 
 export const Select = styled.select`

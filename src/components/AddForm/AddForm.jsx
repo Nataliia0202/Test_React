@@ -1,4 +1,13 @@
 
+
+
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectEvents } from "../../redux/selector";
+import { addNewEvents } from 'redux/operations';
+import { NavButton } from 'components/GlobalStyles';
+import { IconBack } from './IconBack';
+
 import {
   TitelForf,
   Form,
@@ -8,16 +17,9 @@ import {
   InputTitelDate,
   InputTitelTime,
   ButtonAdd,
- 
 } from './AddForm.styled';
 import { Container } from 'components/GlobalStyles';
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectEvents } from "../../redux/selector";
-import { addNewEvents } from 'redux/operations';
 
-import { NavButton } from 'components/GlobalStyles';
-import { IconBack } from './IconBack';
 
 export const AddForm = () => {
 
@@ -53,6 +55,7 @@ const events = useSelector(selectEvents);
     };
     dispatch(addNewEvents(newEventt));
     reset();
+    
   };
   const reset = () => {
     setName('');
@@ -82,6 +85,9 @@ const events = useSelector(selectEvents);
               <InputTitel
                 type="text"
                 name="name"
+                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                title="Name may contain only letters, apostrophe, dash and spaces."
+                required
                 value={name}
                 onChange={event => setName(event.target.value)}
               />
@@ -100,6 +106,7 @@ const events = useSelector(selectEvents);
               <InputTitelDate
                 type="date"
                 name="date"
+                required
                 value={date}
                 onChange={event => setDate(event.target.value)}
               />
@@ -110,6 +117,7 @@ const events = useSelector(selectEvents);
                 type="time"
                 id="appt"
                 name="time"
+                required
                 min="09:00"
                 max="23:00"
                 value={time}
@@ -121,6 +129,7 @@ const events = useSelector(selectEvents);
               <InputTitel
                 type="text"
                 name="location"
+                required
                 value={location}
                 onChange={event => setLocation(event.target.value)}
               />
@@ -130,6 +139,7 @@ const events = useSelector(selectEvents);
               <InputTitel
                 type="text"
                 name="category"
+                required
                 value={category}
                 onChange={event => setCategory(event.target.value)}
               />
@@ -143,6 +153,7 @@ const events = useSelector(selectEvents);
               <InputTitel
                 type="text"
                 name="level"
+                required
                 value={level}
                 onChange={event => setLevel(event.target.value)}
               />

@@ -6,6 +6,7 @@ export const WrapperButton = styled.div`
   margin-top: 40px;
   justify-content: flex-end;
   margin-right: 30px;
+  
 `;
 
 export const ButtonFilter = styled.button`
@@ -20,6 +21,15 @@ export const ButtonFilter = styled.button`
   position: relative;
   background-color: #fff;
   cursor: pointer;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.06);
+    @media screen and (min-width: 768px) {
+      margin-right: 0;
+    }
+  }
 `;
 
 export const ButtonSort = styled.button`
@@ -34,6 +44,15 @@ export const ButtonSort = styled.button`
   position: relative;
   background-color: #fff;
   cursor: pointer;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.06);
+    @media screen and (min-width: 768px) {
+      margin-right: 0;
+    }
+  }
 `;
 
 export const ButtonAdd = styled.button`
@@ -47,4 +66,13 @@ export const ButtonAdd = styled.button`
   margin-left: 20px;
   background-color: #7b61ff;
   cursor: pointer;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.06);
+    @media screen and (min-width: 768px) {
+      margin-right: 0;
+    }
+  }
 `;
