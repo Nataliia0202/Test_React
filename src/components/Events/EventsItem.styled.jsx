@@ -151,9 +151,36 @@ export const List = styled.ul`
 
 
 
+
+
+
+
+
+export const ListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px 15px;
+  padding-top: 0px;
+  border-radius: 10px;
+  height: 480px;
+  width: 272px;
+  position: relative;
+  
+
+  @media screen and (min-width: 768px) {
+    width: 332px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 302px;
+  }
+`;
+
 export const ButtonMoreInfo = styled.button`
   position: absolute;
-  /* display: none; */
+  display: none;
   width: 114px;
   height: 40px;
   border-radius: 8px;
@@ -171,41 +198,20 @@ export const ButtonMoreInfo = styled.button`
   transition-property: transform;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  
   &:hover {
     transform: scale(1.06);
-  @media screen and (min-width: 768px) {
-    margin-right: 0;
-  }
-}
+    @media screen and (min-width: 768px) {
+      margin-right: 0;
+    }
   
+  }
+
   @media screen and (min-width: 768px) {
     bottom: 20px;
-  right: 15px;
+    right: 15px;
   }
   @media screen and (min-width: 768px) {
     bottom: 10px;
-  }
-`;
-export const ListItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  padding: 15px 15px;
-  padding-top: 0px;
-  border-radius: 10px;
-  height: 480px;
-  width: 272px;
-  position: relative;
-  &:hover {
-    display: ${props => props.display};
-  }
-
-  @media screen and (min-width: 768px) {
-    width: 332px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    width: 302px;
   }
 `;

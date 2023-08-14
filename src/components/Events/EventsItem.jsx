@@ -40,7 +40,7 @@ export const EventsItem = ({
         <LevelEvent>{level}</LevelEvent>
       </WrapperCategory>
       <Link to={`events/${id}`} state={{ from: location }}>
-        <ButtonMoreInfo type="button" style={{ hover: {backgroundColor: "wite"}}}>More info</ButtonMoreInfo>
+        <ButtonMoreInfo type="button">More info</ButtonMoreInfo>
       </Link>
     </>
   );

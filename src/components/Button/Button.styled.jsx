@@ -31,6 +31,42 @@ export const ButtonFilter = styled.button`
     }
   }
 `;
+export const MenuUl = styled.ul`
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+`;
+export const MenuLi = styled.li`
+  gap: 30px;
+position: relative;
+`
+
+export const DropdownContent = styled.div`
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #fff;
+  width: 170px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+ &.is-active {
+  opacity: 1;
+  visibility: visible;
+ }
+
+`;
+export const DropdownContentUl = styled.ul`
+
+`;
+
+
+
+export const DropdownContentLi = styled.li`
+  
+
+`
+
 
 export const ButtonSort = styled.button`
   width: 56px;

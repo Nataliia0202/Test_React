@@ -1,6 +1,8 @@
 import { WrapperButton, ButtonAdd, ButtonFilter, ButtonSort } from "./Button.styled";
 import { IconAdd, IconFilter, IconSort } from "components/IconSearch";
 import { Link} from 'react-router-dom';
+import { SimpleMenu } from './BtnFilter';
+
 
 export const Button = () => {
    
@@ -9,17 +11,15 @@ export const Button = () => {
     return (
       <>
         <WrapperButton>
-          <ButtonFilter>
-            <IconFilter />
-          </ButtonFilter>
-          <ButtonSort>
+          <SimpleMenu />
+          {/* <ButtonSort>
             <IconSort />
           </ButtonSort>
           <Link to="add">
             <ButtonAdd>
               <IconAdd />
             </ButtonAdd>
-          </Link>
+          </Link> */}
         </WrapperButton>
       </>
     );
