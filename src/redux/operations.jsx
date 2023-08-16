@@ -8,7 +8,7 @@ export const fetchEvents = createAsyncThunk(
   'events/fetchEvents',
   async (_, thunkApi) => {
     try {
-        const events = await axios.get('/events');
+        const events = await axios.get(`/events`);
       return events.data;
     } catch (error) {
     
@@ -44,6 +44,19 @@ export const fetchEventDel = createAsyncThunk(
   }
 );
 
+export const fetchCategory = createAsyncThunk(
+  'category/fetchCategory',
+  async (categoryName, thunkApi) => {
+    try {
+      const { data } = await axios.get(`/events?${categoryName}`);
+      console.log(data)
+      return data;
+    } catch (error) {
+      toastError();
+      return thunkApi.rejectWithValue(error);
+    }
+  }
+);
 
 
 export const addNewEvents = createAsyncThunk(

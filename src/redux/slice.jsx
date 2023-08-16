@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchEvents, addNewEvents, fetchEventDel } from './operations';
+import { fetchEvents, addNewEvents, fetchEventDel} from './operations';
 
 const handleRequest = state => {
   state.isLoading = true;
@@ -22,6 +22,14 @@ const EventsSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
+    filter: '',
+  },
+
+  reducers: {
+    setFilter(state, action) {
+      console.log(action);
+      state.filter = action.payload;
+    },
   },
 
   extraReducers: {
@@ -58,5 +66,7 @@ const EventsSlice = createSlice({
     },
   },
 });
+export const { setFilter } = EventsSlice.actions;
+
 
 export const EventsReducer = EventsSlice.reducer;

@@ -1,6 +1,6 @@
-import { WrapperButton, ButtonAdd, ButtonFilter, ButtonSort } from "./Button.styled";
-import { IconAdd, IconFilter, IconSort } from "components/IconSearch";
-import { Link} from 'react-router-dom';
+import { WrapperButton, ButtonAdd,  ButtonSort } from "./Button.styled";
+import { IconAdd,IconSort } from "components/IconSearch";
+
 import { SimpleMenu } from './BtnFilter';
 
 
@@ -12,14 +12,14 @@ export const Button = () => {
       <>
         <WrapperButton>
           <SimpleMenu />
-          {/* <ButtonSort>
+          <ButtonSort>
             <IconSort />
           </ButtonSort>
-          <Link to="add">
-            <ButtonAdd>
+          
+            <ButtonAdd to="add">
               <IconAdd />
             </ButtonAdd>
-          </Link> */}
+          
         </WrapperButton>
       </>
     );

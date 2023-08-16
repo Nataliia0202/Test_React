@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import {  useLocation } from 'react-router-dom';
 
 import {
   Image,
@@ -39,9 +39,11 @@ export const EventsItem = ({
         <CategoryEvent>{category}</CategoryEvent>
         <LevelEvent>{level}</LevelEvent>
       </WrapperCategory>
-      <Link to={`events/${id}`} state={{ from: location }}>
-        <ButtonMoreInfo type="button">More info</ButtonMoreInfo>
-      </Link>
+      
+        <ButtonMoreInfo to={`events/${id}`} state={{ from: location }}>
+          More info
+        </ButtonMoreInfo>
+      
     </>
   );
 };

@@ -6,26 +6,48 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { IconFilter } from 'components/IconSearch';
 import { ButtonFilter } from './Button.styled';
-import { selectEvents } from 'redux/selector';
-import { fetchEvents } from 'redux/operations';
+import { selectEvents, selectFilter } from 'redux/selector';
+import { fetchEvents} from 'redux/operations';
+import { setFilter } from 'redux/slice';
+
 
 export const SimpleMenu =()=> {
   const [anchorEl, setAnchorEl] = React.useState(null);
     const dispatch = useDispatch();
     const events = useSelector(selectEvents);
-    console.log(events);
+  const filter = useSelector(selectFilter);
+  // console.log(filter)
 
  useEffect(() => {
-   dispatch(fetchEvents());
+  dispatch(fetchEvents());
+   
  }, [dispatch]);
+  
+  const ev = events.map((event) => {
+    return event.category
+  })
+  
+const uniqueCategory = ev.filter(
+  (event, index, array) => array.indexOf(event) === index
+  );
+  
+
+
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
-  };
+    };
+    
 
-  const handleClose = () => {
+  const handleClose = ()=> {
+    setAnchorEl(null);
+    
+  };
+  const onClick = filter => {
+    dispatch(setFilter(filter));
     setAnchorEl(null);
   };
+    
 
   return (
     <div>
@@ -33,7 +55,6 @@ export const SimpleMenu =()=> {
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
-        
       >
         <IconFilter />
       </ButtonFilter>
@@ -43,10 +64,22 @@ export const SimpleMenu =()=> {
         keepMounted
         open={Boolean(anchorEl)}
         onClose={handleClose}
+        ve="true"
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        {uniqueCategory.length !== 0 &&
+         
+          uniqueCategory.map((category) => {
+            return (
+              <MenuItem
+                key={category}
+                onClick={onClick}
+                value={filter}
+                // onChange={onClick}
+              >
+                {category}
+              </MenuItem>
+            );
+          })}
       </Menu>
     </div>
   );

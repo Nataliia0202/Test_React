@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { Link } from 'react-router-dom';
 
 export const WrapperButton = styled.div`
   display: flex;
@@ -91,7 +91,10 @@ export const ButtonSort = styled.button`
   }
 `;
 
-export const ButtonAdd = styled.button`
+export const ButtonAdd = styled(Link)`
+display: flex;
+align-items:center;
+justify-content: center;
   width: 56px;
   height: 56px;
   gap: 4px;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import { Link } from 'react-router-dom';
 
 
 export const Image = styled.img`
@@ -152,10 +152,6 @@ export const List = styled.ul`
 
 
 
-
-
-
-
 export const ListItem = styled.li`
   display: flex;
   flex-direction: column;
@@ -178,9 +174,9 @@ export const ListItem = styled.li`
   }
 `;
 
-export const ButtonMoreInfo = styled.button`
+export const ButtonMoreInfo = styled(Link)`
   position: absolute;
-  display: none;
+  /* display: none; */
   width: 114px;
   height: 40px;
   border-radius: 8px;

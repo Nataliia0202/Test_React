@@ -6,7 +6,7 @@ import { Container } from "components/GlobalStyles";
 
 
 export const ManePage = () => {
-    
+  
     return (
       <>
         <Container>
