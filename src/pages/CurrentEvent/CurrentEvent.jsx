@@ -43,35 +43,36 @@ const events = useSelector(selectEvents);
             Back
           </NavButton>
 
-          <TitelForf>Galery Opening</TitelForf>
-
           {events &&
             events?.map(
               event =>
                 event.id === id && (
-                  <WrapperEventOne>
-                    <EventLi
-                      key={event.id}
-                      name={event.name}
-                      image={event.image}
-                      place={event.place}
-                      time={event.time}
-                      description={event.description}
-                      category={event.category}
-                      level={event.level}
-                    />
-                    <WrapperButtonOne>
-                      <ButtonEventOne>Edit</ButtonEventOne>
-                      <Link to="/">
-                        <ButtonEventOne
-                          type="button"
-                          onClick={() => dispatch(fetchEventDel(event.id))}
-                        >
-                          Delete
-                        </ButtonEventOne>
-                      </Link>
-                    </WrapperButtonOne>
-                  </WrapperEventOne>
+                  <>
+                    <TitelForf>{event.name}</TitelForf>
+                    <WrapperEventOne>
+                      <EventLi
+                        key={event.id}
+                        
+                        image={event.image}
+                        place={event.place}
+                        time={event.time}
+                        description={event.description}
+                        category={event.category}
+                        level={event.level}
+                      />
+                      <WrapperButtonOne>
+                        <ButtonEventOne>Edit</ButtonEventOne>
+                        <Link to="/">
+                          <ButtonEventOne
+                            type="button"
+                            onClick={() => dispatch(fetchEventDel(event.id))}
+                          >
+                            Delete
+                          </ButtonEventOne>
+                        </Link>
+                      </WrapperButtonOne>
+                    </WrapperEventOne>
+                  </>
                 )
             )}
         </Container>

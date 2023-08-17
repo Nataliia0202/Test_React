@@ -69,48 +69,69 @@ export const NameEventOne = styled.p`
 export const DescriptionEventOne = styled.p`
   font-size: 14px;
   line-height: 20px;
-  
+
   margin-top: 15px;
   color: #49454f;
   @media screen and (min-width: 768px) {
-    display: block;
+    
+    
   }
 `;
+
+export const WrapperDiv = styled.div`
+  display: flex;
+  gap: 10px;
+margin-top: 15px;
+`
+
 export const PlaceEventOne = styled.p`
+  display: inline-block;
   font-size: 12px;
   line-height: 26px;
   font-family: 'Poppins';
   text-align: center;
   color: #49454f;
+  border-radius: 8px;
+  box-shadow: 2px 4px 9px #a68dae;
+  background-color: #fff;
+  padding: 5px;
 `;
   
 
-  export const TimeEventOne = styled.p`
+export const TimeEventOne = styled.p`
+  display: inline-block;
   font-size: 12px;
   line-height: 26px;
   text-align: center;
   color: rgba(0, 0, 0, 0.87);
+  border-radius: 8px;
+  box-shadow: 2px 4px 9px #a68dae;
+  background-color: #fff;
+  padding: 5px;
+  margin-top: 15px;
 `;
 
 export const CategoryEventOne = styled.p`
   font-size: 14px;
-  line-height: 20px;
-  display: block;
-  margin-right:10px;
+  display: inline-block;
+  
   background-color: #fff;
   border-radius: 8px;
   padding: 10px;
   font-weight: 600;
-font-family:'Poppins';
+  font-family: 'Poppins';
   text-align: center;
   color: #7b61ff;
+  
+  box-shadow: 2px 4px 9px #a68dae;
 `;
 
 export const LevelEventOne = styled.p`
   font-size: 14px;
-  line-height: 20px;
-  display: block;
 
+  display: inline-block;
+  border-radius: 8px;
+  box-shadow: 2px 4px 9px #a68dae;
   background-color: #fff;
   border-radius: 8px;
   padding: 10px;
@@ -125,25 +146,27 @@ export const ButtonEventOne = styled.button`
   width: 100px;
   height: 32px;
   border-radius: 8px;
-  padding: 10px 24px;
+  padding: 8px 16px;
   margin-top: 5px;
   line-height: 16px;
   gap: 10px;
   font-family: 'Poppins';
   font-weight: 500;
   font-size: 12px;
-  border: none;
-  background-color: #7b61ff;
-  color: #fff;
+  border: 1px solid #7b61ff;
+  background-color: #fff;
+  color: #7b61ff;
   cursor: pointer;
   transition-property: transform;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
+    background-color: #7b61ff;
+    color: #fff;
     transform: scale(1.06);
-    @media screen and (min-width: 768px) {
+    /* @media screen and (min-width: 768px) {
       margin-right: 0;
-    }
+    } */
   }
 `;
 
