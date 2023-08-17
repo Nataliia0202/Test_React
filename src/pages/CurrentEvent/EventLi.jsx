@@ -6,9 +6,8 @@ import {
   TimeEventOne,
   CategoryEventOne,
   LevelEventOne,
-  WrapperTimeOne,
-  WrapperCategoryOne,
   
+  WrapperContent,
 } from './CurrentEvent.styled';
 
 
@@ -27,17 +26,18 @@ export const EventLi = ({
   return (
     <>
       <ImgEvOne src={image} alt="Events" />
-      <NameEventOne>{name}</NameEventOne>
-      <DescriptionEventOne>{description}</DescriptionEventOne>
-      <WrapperTimeOne>
-        <TimeEventOne>{time}</TimeEventOne>
-        <PlaceEventOne>{place}</PlaceEventOne>
-      </WrapperTimeOne>
-      <WrapperCategoryOne>
-        <CategoryEventOne>{category}</CategoryEventOne>
-        <LevelEventOne>{level}</LevelEventOne>
-      </WrapperCategoryOne>
-      
+      <WrapperContent>
+        <NameEventOne>{name}</NameEventOne>
+        <DescriptionEventOne>{description}</DescriptionEventOne>
+       
+          <TimeEventOne>{time}</TimeEventOne>
+          <PlaceEventOne>{place}</PlaceEventOne>
+        
+        
+          <CategoryEventOne>{category}</CategoryEventOne>
+          <LevelEventOne>{level}</LevelEventOne>
+       
+      </WrapperContent>
     </>
   );
 };

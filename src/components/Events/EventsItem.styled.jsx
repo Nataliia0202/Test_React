@@ -160,10 +160,10 @@ export const ListItem = styled.li`
   padding: 15px 15px;
   padding-top: 0px;
   border-radius: 10px;
+  box-shadow: 2px 4px 9px #a68dae;
   height: 480px;
   width: 272px;
   position: relative;
-  
 
   @media screen and (min-width: 768px) {
     width: 332px;
