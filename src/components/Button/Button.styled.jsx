@@ -9,6 +9,14 @@ export const WrapperButton = styled.div`
   
 `;
 
+export const TextBtn = styled.span`
+  display: none;
+  
+`
+export const Icon = styled.svg``;
+
+
+
 export const ButtonFilter = styled.button`
   width: 56px;
   height: 56px;
@@ -25,47 +33,42 @@ export const ButtonFilter = styled.button`
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
+    ${Icon} {
+      > path {
+        stroke: #7b61ff;
+      }
+    }
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 143px;
+    padding: 10px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    line-height: 24px;
+    color: #3f3f3f;
+    ${TextBtn} {
+      display: block;
+    }
+    &:hover {
+      color: #7b61ff;
+     
+    }
+    @media screen and (min-width: 1280px) {
+      width: 148px;
+    }
+  }
+
+  &:hover {
     transform: scale(1.06);
     @media screen and (min-width: 768px) {
       margin-right: 0;
     }
   }
 `;
-export const MenuUl = styled.ul`
- display: flex;
- flex-wrap: wrap;
- align-items: center;
-`;
-export const MenuLi = styled.li`
-  gap: 30px;
-position: relative;
-`
 
-export const DropdownContent = styled.div`
-  position: absolute;
-  right: 0;
-  top: 100%;
-  background-color: #fff;
-  width: 170px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
- &.is-active {
-  opacity: 1;
-  visibility: visible;
- }
-
-`;
-export const DropdownContentUl = styled.ul`
-
-`;
-
-
-
-export const DropdownContentLi = styled.li`
-  
-
-`
 
 
 export const ButtonSort = styled.button`
@@ -92,10 +95,10 @@ export const ButtonSort = styled.button`
 `;
 
 export const ButtonAdd = styled(Link)`
-display: flex;
-align-items:center;
-justify-content: center;
-  width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
   height: 56px;
   gap: 4px;
   border-radius: 8px;
@@ -112,6 +115,15 @@ justify-content: center;
     transform: scale(1.06);
     @media screen and (min-width: 768px) {
       margin-right: 0;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    ${TextBtn} {
+      display: block;
+      justify-content: space-around;
+      color: #fff;
+      padding: 15px;
+      width: 100%;
     }
   }
 `;

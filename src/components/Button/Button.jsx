@@ -1,7 +1,9 @@
-import { WrapperButton, ButtonAdd,  ButtonSort } from "./Button.styled";
-import { IconAdd,IconSort } from "components/IconSearch";
+
+import { IconAdd} from "components/IconSearch";
 
 import { SimpleMenu } from './BtnFilter';
+import { BtnSort } from "./BtnSort";
+import { WrapperButton, ButtonAdd, TextBtn } from './Button.styled';
 
 
 export const Button = () => {
@@ -11,15 +13,13 @@ export const Button = () => {
     return (
       <>
         <WrapperButton>
-          <SimpleMenu />
-          <ButtonSort>
-            <IconSort />
-          </ButtonSort>
-          
-            <ButtonAdd to="add">
-              <IconAdd />
-            </ButtonAdd>
-          
+          <SimpleMenu text="Category" />
+          <BtnSort text="Sort by" />
+
+          <ButtonAdd to="add">
+            <IconAdd />
+            <TextBtn>Add new event</TextBtn>
+          </ButtonAdd>
         </WrapperButton>
       </>
     );

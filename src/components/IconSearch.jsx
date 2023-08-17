@@ -1,3 +1,9 @@
+import { Icon } from "./Button/Button.styled";
+
+
+
+
+
 
 
 export const IconSearch = () => {
@@ -20,7 +26,7 @@ export const IconSearch = () => {
 export const IconFilter = () => {
   return (
     <>
-      <svg
+      <Icon
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -29,12 +35,12 @@ export const IconFilter = () => {
       >
         <path
           d="M4 4L9 12V18L15 21V12L20 4H4Z"
-          stroke="#7B61FF"
+          stroke="#3F3F3F"
           stroke-width="1.5"
           stroke-linecap="round"
           stroke-linejoin="round"
         />
-      </svg>
+      </Icon>
     </>
   );
 }
@@ -42,7 +48,7 @@ export const IconFilter = () => {
 export const IconSort = () => {
   return (
     <>
-      <svg
+      <Icon
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -55,7 +61,7 @@ export const IconSort = () => {
           stroke-width="1.5"
           stroke-linecap="round"
         />
-      </svg>
+      </Icon>
     </>
   );
 };
@@ -81,3 +87,5 @@ export const IconAdd = () => {
     </>
   );
 };
+
+
