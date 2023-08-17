@@ -40,7 +40,7 @@ export const DescriptionEvent = styled.p`
   margin-top: 10px;
   color: #49454f;
   @media screen and (min-width: 768px) {
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 2;
   }
   @media screen and (min-width: 1280px) {
     -webkit-line-clamp: 2;
@@ -71,7 +71,7 @@ export const WrapperTime = styled.div`
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.8);
   @media screen and (min-width: 768px) {
-    bottom: 144px;
+    bottom: 104px;
   }
   @media screen and (min-width: 1280px) {
     bottom: 104px;
@@ -210,7 +210,7 @@ export const ListItem = styled.li`
     ${WrapperTime} {
       bottom: 152px;
       @media screen and (min-width: 768px) {
-        bottom: 200px;
+        bottom: 160px;
       }
       @media screen and (min-width: 1280px) {
         bottom: 160px;

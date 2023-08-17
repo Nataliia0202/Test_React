@@ -74,11 +74,22 @@ export const SearchForm = styled.form`
 `;
 
 export const SearchInput = styled.input`
-
- width: 100%;
- height: 100%;
+  width: 100%;
+  height: 100%;
   border: none;
   padding: 12px;
+  &:hover {
+    border: none;
+    outline: none;
+  }
+  &:active {
+    border: none;
+    outline: none;
+  }
+  &:focus {
+    border: none;
+    outline: none;
+  }
 `;
 
 export const IconButton = styled.button`

@@ -7,7 +7,7 @@ import { selectEvents } from 'redux/selector';
 import { fetchEvents } from "redux/operations";
 
 import { useEffect } from "react";
-import { selectFilteredEvents } from "redux/selector";
+
 
 
 
@@ -16,8 +16,8 @@ export const EventList = () => {
   const events = useSelector(selectEvents);
   console.log(events);
   const dispatch = useDispatch();
-  const filteredEvents = useSelector(selectFilteredEvents);
-  console.log(filteredEvents);
+  // const filteredEvents = useSelector(selectFilteredEvents);
+  // console.log(filteredEvents);
 
 useEffect(() => {
   dispatch(fetchEvents());
@@ -28,8 +28,8 @@ useEffect(() => {
   return (
     <>
       <List>
-        {filteredEvents.length !== 0 &&
-          filteredEvents.map(
+        {events.length !== 0 &&
+          events.map(
             ({
               id,
               name,

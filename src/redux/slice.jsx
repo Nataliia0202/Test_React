@@ -22,15 +22,10 @@ const EventsSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
-    filter: '',
+   
   },
 
-  reducers: {
-    setFilter(state, action) {
-      console.log(action);
-      state.filter = action.payload;
-    },
-  },
+  
 
   extraReducers: {
     [fetchEvents.pending](state) {
@@ -66,7 +61,6 @@ const EventsSlice = createSlice({
     },
   },
 });
-export const { setFilter } = EventsSlice.actions;
 
 
 export const EventsReducer = EventsSlice.reducer;

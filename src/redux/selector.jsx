@@ -10,6 +10,7 @@ export const selectError = state => state.events.error;
 
 export const selectFilter = state => state.events.filter;
 
+export const selectSearch = state => state.search.search;
 
 
 export const selectFilteredEvents = createSelector([selectEvents, selectFilter], (events, filter) => {

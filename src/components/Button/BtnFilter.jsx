@@ -6,16 +6,16 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { IconFilter } from 'components/IconSearch';
 import { ButtonFilter } from './Button.styled';
-import { selectEvents, selectFilter } from 'redux/selector';
+import { selectEvents} from 'redux/selector';
 import { fetchEvents} from 'redux/operations';
-import { setFilter } from 'redux/slice';
+
 
 
 export const SimpleMenu =()=> {
   const [anchorEl, setAnchorEl] = React.useState(null);
     const dispatch = useDispatch();
     const events = useSelector(selectEvents);
-  const filter = useSelector(selectFilter);
+ 
   // console.log(filter)
 
  useEffect(() => {
@@ -43,8 +43,8 @@ const uniqueCategory = ev.filter(
     setAnchorEl(null);
     
   };
-  const onClick = filter => {
-    dispatch(setFilter(filter));
+  const onClick =()=> {
+    
     setAnchorEl(null);
   };
     
@@ -73,8 +73,8 @@ const uniqueCategory = ev.filter(
               <MenuItem
                 key={category}
                 onClick={onClick}
-                value={filter}
-                // onChange={onClick}
+                
+                
               >
                 {category}
               </MenuItem>

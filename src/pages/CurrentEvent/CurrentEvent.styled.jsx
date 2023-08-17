@@ -53,7 +53,7 @@ export const ImgEvOne = styled.img`
   
   border: none;
   object-fit: cover;
-  height: 168px;
+  height: 200px;
   @media screen and (min-width: 768px) {
     width: 302px;
     height: 336px;
