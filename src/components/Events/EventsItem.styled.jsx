@@ -13,11 +13,11 @@ export const Image = styled.img`
   height: 336px;
   @media screen and (min-width: 768px) {
     width: 332px;
-    height: 280px;
+    
   }
   @media screen and (min-width: 1280px) {
     width: 302px;
-    height: 336px;
+    
   }
 `;
 
@@ -58,7 +58,7 @@ export const WrapperTime = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  bottom: 144px;
+  bottom: 104px;
   left: 0;
   margin: 0;
   font-weight: 700;
@@ -71,10 +71,10 @@ export const WrapperTime = styled.div`
   padding: 10px;
   background-color: rgba(255, 255, 255, 0.8);
   @media screen and (min-width: 768px) {
-    bottom: 200px;
+    bottom: 144px;
   }
   @media screen and (min-width: 1280px) {
-    bottom: 144px;
+    bottom: 104px;
   }
 `;
 export const TimeEvent = styled.p`
@@ -149,39 +149,13 @@ export const List = styled.ul`
   }
 `;
 
-
-
-
-export const ListItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  padding: 15px 15px;
-  padding-top: 0px;
-  border-radius: 10px;
-  box-shadow: 2px 4px 9px #a68dae;
-  height: 480px;
-  width: 272px;
-  position: relative;
-
-  @media screen and (min-width: 768px) {
-    width: 332px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    width: 302px;
-  }
-`;
-
 export const ButtonMoreInfo = styled(Link)`
-  position: absolute;
-  /* display: none; */
+  display: none;
   width: 114px;
   height: 40px;
   border-radius: 8px;
   padding: 10px 24px;
-
+  margin-top: 10px;
   bottom: 10px;
   gap: 10px;
   font-family: 'Poppins';
@@ -194,13 +168,12 @@ export const ButtonMoreInfo = styled(Link)`
   transition-property: transform;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &:hover {
     transform: scale(1.06);
     @media screen and (min-width: 768px) {
       margin-right: 0;
     }
-  
   }
 
   @media screen and (min-width: 768px) {
@@ -211,3 +184,51 @@ export const ButtonMoreInfo = styled(Link)`
     bottom: 10px;
   }
 `;
+
+
+export const ListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 15px 15px;
+  padding-top: 0px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 9px #a68dae;
+
+  width: 272px;
+  position: relative;
+  height: 100%;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.06);
+    ${ButtonMoreInfo} {
+      display: block;
+    }
+    ${WrapperTime} {
+      bottom: 152px;
+      @media screen and (min-width: 768px) {
+        bottom: 200px;
+      }
+      @media screen and (min-width: 1280px) {
+        bottom: 160px;
+      }
+    }
+    ${Image} {
+      @media screen and (min-width: 768px) {
+        height:280px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 332px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 302px;
+  }
+`;
+

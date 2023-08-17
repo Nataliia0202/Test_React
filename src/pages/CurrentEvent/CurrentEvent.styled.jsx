@@ -16,6 +16,12 @@ export const WrapperEventOne = styled.div`
   margin-top: 40px;
   display: inline-block;
   vertical-align: top;
+  transition-property: transform;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover {
+    transform: scale(1.06);
+  }
   @media screen and (min-width: 768px) {
     width: 302px;
     margin: 0;
@@ -43,8 +49,8 @@ export const ImgEvOne = styled.img`
   width: 100%;
   top:0;
   left:0;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
+  border-radius: 10px;
+  
   border: none;
   object-fit: cover;
   height: 168px;
@@ -90,7 +96,8 @@ export const PlaceEventOne = styled.p`
   line-height: 26px;
   font-family: 'Poppins';
   text-align: center;
-  color: #49454f;
+  color: #7b61ff;
+  font-family:500;
   border-radius: 8px;
   box-shadow: 2px 4px 9px #a68dae;
   background-color: #fff;
@@ -101,9 +108,11 @@ export const PlaceEventOne = styled.p`
 export const TimeEventOne = styled.p`
   display: inline-block;
   font-size: 12px;
+  font-family: 'Poppins';
+  font-family: 500;
   line-height: 26px;
   text-align: center;
-  color: rgba(0, 0, 0, 0.87);
+  color: #7b61ff;
   border-radius: 8px;
   box-shadow: 2px 4px 9px #a68dae;
   background-color: #fff;
@@ -118,7 +127,7 @@ export const CategoryEventOne = styled.p`
   background-color: #fff;
   border-radius: 8px;
   padding: 10px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: 'Poppins';
   text-align: center;
   color: #7b61ff;
@@ -135,7 +144,7 @@ export const LevelEventOne = styled.p`
   background-color: #fff;
   border-radius: 8px;
   padding: 10px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: 'Poppins';
 
   text-align: center;
@@ -179,6 +188,6 @@ export const WrapperButtonOne = styled.div`
   padding-right: 20px;
   padding-bottom:20px;
   @media screen and (min-width: 768px) {
-    margin-top: 5px;
+    margin-top: 15px;
   }
 `;
