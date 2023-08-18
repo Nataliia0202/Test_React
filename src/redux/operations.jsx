@@ -6,7 +6,7 @@ axios.defaults.baseURL = 'https://64ca905f700d50e3c70510c5.mockapi.io';
 
 export const fetchEvents = createAsyncThunk(
   'events/fetchEvents',
-  async (_, thunkApi) => {
+  async (search, thunkApi) => {
     try {
         const events = await axios.get(`/events`);
       return events.data;

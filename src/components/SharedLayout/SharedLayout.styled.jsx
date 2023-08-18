@@ -54,6 +54,7 @@ export const Options = styled.option`
 `;
 
 export const SearchForm = styled.form`
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
@@ -66,7 +67,6 @@ export const SearchForm = styled.form`
   @media screen and (min-width: 768px) {
     width: 368px;
     margin-top: 0;
-  
   }
   @media screen and (min-width: 1280px) {
     width: 410px;
@@ -74,6 +74,7 @@ export const SearchForm = styled.form`
 `;
 
 export const SearchInput = styled.input`
+
   width: 100%;
   height: 100%;
   border: none;
@@ -92,7 +93,7 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const IconButton = styled.button`
+export const IconButton = styled.div`
   display: inline-block;
  margin-left: 10px;
 margin-top:5px;
@@ -109,5 +110,22 @@ export const Wrapper = styled.div`
   flex-direction: column-reverse;
   @media screen and (min-width: 768px) {
     flex-direction: row;
+  }
+`;
+export const IconButtonClose = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 15px;
+  top: 4px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
   }
 `;

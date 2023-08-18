@@ -3,7 +3,7 @@
 import { EventsItem } from "./EventsItem";
 import { List, ListItem } from "./EventsItem.styled";
 import { useSelector, useDispatch } from 'react-redux';
-import { selectEvents } from 'redux/selector';
+import { selectEvents, selectSearch } from 'redux/selector';
 import { fetchEvents } from "redux/operations";
 
 import { useEffect } from "react";
@@ -15,13 +15,16 @@ import { useEffect } from "react";
 export const EventList = () => {
   const events = useSelector(selectEvents);
   console.log(events);
+  const search = useSelector(selectSearch);
+  console.log(search);
   const dispatch = useDispatch();
+  
   // const filteredEvents = useSelector(selectFilteredEvents);
   // console.log(filteredEvents);
 
 useEffect(() => {
-  dispatch(fetchEvents());
-}, [dispatch]);
+  dispatch(fetchEvents({ search }));
+}, [dispatch, search]);
   
   
 

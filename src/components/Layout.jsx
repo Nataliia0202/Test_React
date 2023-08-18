@@ -6,8 +6,8 @@ import { Container } from "./GlobalStyles";
 export const Layout = () => {
     return (
       <>
-        <SharedLayout />
         <Container>
+          <SharedLayout />
           <Suspense fallback={null}>
             <main>
               <Outlet />
