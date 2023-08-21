@@ -53,11 +53,10 @@ export const LabelInput = styled.label`
   line-height: 16px;
   letter-spacing: 0.4px;
   margin-top: 15px;
-  
-  
 `;
 
 export const InputTitel = styled.input`
+  font-family: 'Poppins';
   width: 240px;
   height: 56px;
   border-radius: 8px;
@@ -66,23 +65,23 @@ export const InputTitel = styled.input`
   outline: none;
   box-sizing: border-box;
   margin-top: 5px;
+  background-color: transparent;
   @media screen and (min-width: 768px) {
     width: 308px;
-    
   }
   @media screen and (min-width: 1280px) {
     width: 372px;
-    
   }
 `;
 
 export const TextareaDescription = styled.textarea`
+  font-family: 'Poppins';
   width: 240px;
   height: 156px;
   margin-top: 5px;
   border-radius: 8px;
   border: 1px solid #aca7c3;
-  padding: 12px 16px;
+  padding: 15px 25px;
   outline: none;
   box-sizing: border-box;
   @media screen and (min-width: 768px) {
@@ -94,6 +93,7 @@ export const TextareaDescription = styled.textarea`
 `;
 
 export const InputTitelDate = styled.input`
+  font-family: 'Poppins';
   width: 240px;
   height: 56px;
   margin-top: 5px;
@@ -113,6 +113,7 @@ export const InputTitelDate = styled.input`
 `;
 
 export const InputTitelTime = styled.input`
+  font-family: 'Poppins';
   width: 240px;
   height: 56px;
   margin-top: 5px;
@@ -157,3 +158,57 @@ export const ButtonAdd = styled.button`
     width: 193px;
   }
 `;
+
+
+export const IconButtonCloseTitel = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+export const IconButtonCloseTitelWrapper = styled.div`
+  display: inline-block;
+  position: relative;
+
+`
+
+export const IconButtonCloseLocationWrapper = styled.div`
+  display: inline-block;
+  position: relative;
+`;
+
+export const IconButtonCloseDescriptionWrapper = styled.div`
+  display: inline-block;
+  position: relative;
+`;
+
+export const IconButtonCloseDescription = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+

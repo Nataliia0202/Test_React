@@ -16,16 +16,12 @@ export const EventList = () => {
   const events = useSelector(selectEvents);
   console.log(events);
   const search = useSelector(selectSearch);
-  console.log(search);
+ 
   const dispatch = useDispatch();
   
-  // const filteredEvents = useSelector(selectFilteredEvents);
-  // console.log(filteredEvents);
-
-useEffect(() => {
+  useEffect(() => {
   dispatch(fetchEvents({ search }));
 }, [dispatch, search]);
-  
   
 
   return (

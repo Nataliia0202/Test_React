@@ -7,6 +7,8 @@ import { selectEvents } from "../../redux/selector";
 import { addNewEvents } from 'redux/operations';
 import { NavButton } from 'components/GlobalStyles';
 import { IconBack } from './IconBack';
+import { IconButtonCloseTitel } from './AddForm.styled';
+import { IconClose } from 'components/IconSearch';
 
 import {
   TitelForf,
@@ -17,6 +19,10 @@ import {
   InputTitelDate,
   InputTitelTime,
   ButtonAdd,
+  IconButtonCloseTitelWrapper,
+  IconButtonCloseLocationWrapper,
+  IconButtonCloseDescriptionWrapper,
+  IconButtonCloseDescription,
 } from './AddForm.styled';
 import { Container } from 'components/GlobalStyles';
 
@@ -68,7 +74,20 @@ const events = useSelector(selectEvents);
   };
 
   const backLinkHref = location.state?.from ?? '/';
+
+
+  const onClickClear = () => {
+    setName('');
+   
+  };
+
+  const onClickClearLocation = () => {
+    setLocation('');
+  };
   
+  const onClickCleardescription = () => {
+    setDescription('');
+  };
 
     return (
       <>
@@ -82,24 +101,42 @@ const events = useSelector(selectEvents);
           <Form onSubmit={onSubmitForm}>
             <LabelInput>
               Title
-              <InputTitel
-                type="text"
-                name="name"
-                pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                title="Name may contain only letters, apostrophe, dash and spaces."
-                required
-                value={name}
-                onChange={event => setName(event.target.value)}
-              />
+              <IconButtonCloseTitelWrapper>
+                <InputTitel
+                  type="text"
+                  name="name"
+                  pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+                  title="Name may contain only letters, apostrophe, dash and spaces."
+                  required
+                  value={name}
+                  onChange={event => setName(event.target.value)}
+                />
+
+                {name && (
+                  <IconButtonCloseTitel type="button" onClick={onClickClear}>
+                    <IconClose styled={{ with: 24, height: 24 }} />
+                  </IconButtonCloseTitel>
+                )}
+              </IconButtonCloseTitelWrapper>
             </LabelInput>
             <LabelInput>
               Description
-              <TextareaDescription
-                type="text"
-                name="description"
-                value={description}
-                onChange={event => setDescription(event.target.value)}
-              />
+              <IconButtonCloseDescriptionWrapper>
+                <TextareaDescription
+                  type="text"
+                  name="description"
+                  value={description}
+                  onChange={event => setDescription(event.target.value)}
+                />
+                {description && (
+                  <IconButtonCloseDescription
+                    type="button"
+                    onClick={onClickCleardescription}
+                  >
+                    <IconClose styled={{ with: 24, height: 24 }} />
+                  </IconButtonCloseDescription>
+                )}
+              </IconButtonCloseDescriptionWrapper>
             </LabelInput>
             <LabelInput htmlFor="start">
               Select date
@@ -126,13 +163,23 @@ const events = useSelector(selectEvents);
             </LabelInput>
             <LabelInput>
               Location
-              <InputTitel
-                type="text"
-                name="location"
-                required
-                value={location}
-                onChange={event => setLocation(event.target.value)}
-              />
+              <IconButtonCloseLocationWrapper>
+                <InputTitel
+                  type="text"
+                  name="location"
+                  required
+                  value={location}
+                  onChange={event => setLocation(event.target.value)}
+                />
+                {location && (
+                  <IconButtonCloseTitel
+                    type="button"
+                    onClick={onClickClearLocation}
+                  >
+                    <IconClose styled={{ with: 24, height: 24 }} />
+                  </IconButtonCloseTitel>
+                )}
+              </IconButtonCloseLocationWrapper>
             </LabelInput>
             <LabelInput>
               Category
