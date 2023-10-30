@@ -7,10 +7,12 @@ axios.defaults.baseURL = 'https://64ca905f700d50e3c70510c5.mockapi.io';
 export const fetchEvents = createAsyncThunk(
   'events/fetchEvents',
   async (params, thunkApi) => {
-    const { search } = params
+    const { search, currentPage=1 } = params;
     
     try {
-        const events = await axios.get(`/events?search=${search}`);
+        const events = await axios.get(
+          `/events?page=${currentPage}&limit=4&search=${search}`
+        );
       return events.data;
     } catch (error) {
     

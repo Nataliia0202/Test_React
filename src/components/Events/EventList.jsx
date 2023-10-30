@@ -5,10 +5,7 @@ import { List, ListItem } from "./EventsItem.styled";
 import { useSelector, useDispatch } from 'react-redux';
 import { selectEvents, selectSearch } from 'redux/selector';
 import { fetchEvents } from "redux/operations";
-
 import { useEffect } from "react";
-
-
 
 
 
@@ -20,8 +17,8 @@ export const EventList = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-  dispatch(fetchEvents({ search }));
-}, [dispatch, search]);
+    dispatch(fetchEvents({ search}));
+  }, [dispatch, search]);
   
 
   return (

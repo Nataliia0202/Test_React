@@ -22,9 +22,7 @@ const EventsSlice = createSlice({
     items: [],
     isLoading: false,
     error: null,
-   
   },
-
   
 
   extraReducers: {
@@ -61,6 +59,5 @@ const EventsSlice = createSlice({
     },
   },
 });
-
 
 export const EventsReducer = EventsSlice.reducer;
