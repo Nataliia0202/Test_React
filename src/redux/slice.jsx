@@ -40,7 +40,7 @@ const EventsSlice = createSlice({
       handleRequest(state);
     },
     [addNewEvents.fulfilled](state, action) {
-      state.items.push(action.payload);
+      state.items = [action.payload, ...state.items];
       handleSuccess(state, action);
     },
     [addNewEvents.rejected](state, action) {

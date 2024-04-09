@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export const WrapperButton = styled.div`
   display: flex;
-  margin-top: 40px;
+  // margin-top: 40px;
   justify-content: flex-end;
-  margin-right: 30px;
+  
   
 `;
 

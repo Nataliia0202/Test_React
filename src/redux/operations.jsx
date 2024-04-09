@@ -11,7 +11,7 @@ export const fetchEvents = createAsyncThunk(
     
     try {
         const events = await axios.get(
-          `/events?page=${currentPage}&limit=4&search=${search}`
+          `/events?page=${currentPage}&limit=8&search=${search}`
         );
       return events.data;
     } catch (error) {

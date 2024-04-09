@@ -135,8 +135,8 @@ export const List = styled.ul`
   margin-bottom: 20px;
   padding: 0;
   list-style: none;
-  margin-left: auto;
-  margin-right: auto;
+  // margin-left: auto;
+  // margin-right: auto;
   margin-bottom: 50px;
   margin-top: 50px;
   @media screen and (min-width: 768px) {

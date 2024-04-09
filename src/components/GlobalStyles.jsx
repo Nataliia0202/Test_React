@@ -69,16 +69,40 @@ export const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export const Container = styled.div`
-  max-width: 1280px;
+export const Main = styled.main`
+margin: 0 auto;
+`
 
-  margin: 0 auto;
-  padding: 0 16px;
+export const Container = styled.section`
+padding-top: 40px;
+    padding-bottom: 56px;
+    
 
-  @media screen and (min-width: 768px) {
-    margin: 0;
-  }
+  // @madia screen and (min-width: 1280 px){
+  //   max-width: 1280px;
+  //   padding: 0px 100px;
+  //   margin-top: 40px;
+  //   margin: 0 auto;
+    
+  // }
+
+  // // @media screen and (min-width: 768px) {
+  // //   margin: 0;
+  // // }
 `;
+
+export const WrapperSection = styled.div`
+    width: 100%;
+    max-width: 410px;
+    margin: 0 auto;
+    padding: 0px 16px;
+
+    @madia screen and (min-width: 768px){
+      max-width: 768px;
+      padding: 0px 100px;
+        
+      }
+`
 
 export const NavButton = styled(NavLink)`
   font-family: 'Poppins';

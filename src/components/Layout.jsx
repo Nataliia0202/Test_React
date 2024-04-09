@@ -2,18 +2,18 @@
 import { SharedLayout } from "./SharedLayout/SharedLayout";
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Container } from "./GlobalStyles";
+import { Main } from "./GlobalStyles";
 export const Layout = () => {
     return (
       <>
-        <Container>
+        
           <SharedLayout />
           <Suspense fallback={null}>
-            <main>
+            <Main>
               <Outlet />
-            </main>
+            </Main>
           </Suspense>
-        </Container>
+        
       </>
     );
 }

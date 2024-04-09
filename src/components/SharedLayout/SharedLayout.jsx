@@ -3,12 +3,9 @@
 import { Link } from 'react-router-dom';
 import { SerchForm } from './SearchForm';
 import {
- 
   Header,
   Logo,
-  
   Wrapper,
-  
 } from './SharedLayout.styled';
 
 

@@ -6,8 +6,8 @@ import '@fontsource/alata';
 export const Header = styled.header`
   display: flex;
   background-color: #fefcff;
-  padding: 16px 16px;
-  
+  padding: 40px 100px;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
   border-bottom: 1px solid #7b61ff;
