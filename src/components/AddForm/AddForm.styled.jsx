@@ -33,7 +33,7 @@ export const Form = styled.form`
     grid-column-gap: 0px;
   }
   @media screen and (min-width: 1280px) {
-    width: 1280px;
+    width: 1200px;
     display: grid;
     justify-items: center;
     place-items: center;

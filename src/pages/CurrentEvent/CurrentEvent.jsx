@@ -6,6 +6,7 @@ import {
   WrapperEventOne,
   ButtonEventOne,
   WrapperButtonOne,
+  WrapperPage,
 } from './CurrentEvent.styled';
 
 import { Container } from 'components/GlobalStyles';
@@ -38,6 +39,7 @@ const events = useSelector(selectEvents);
     return (
       <>
         <Container>
+          <WrapperPage>
           <NavButton to={backLinkHref}>
             <IconBack styled={{ with: 24, height: 24 }} />
             Back
@@ -75,6 +77,7 @@ const events = useSelector(selectEvents);
                   </>
                 )
             )}
+            </WrapperPage>
         </Container>
       </>
     );

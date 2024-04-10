@@ -1,5 +1,19 @@
 import styled from 'styled-components';
 
+export const WrapperPage = styled.div`
+
+@media screen and (min-width: 768px) {
+  
+  width: 768px;
+}
+@media screen and (min-width: 1280px) {
+  
+  width: 1280px;
+  padding: 0 100px
+}
+
+`
+
 export const WrapperEventOne = styled.div`
   display: flex;
   flex-direction: column;

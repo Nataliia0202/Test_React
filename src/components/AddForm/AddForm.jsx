@@ -24,7 +24,7 @@ import {
   IconButtonCloseDescriptionWrapper,
   IconButtonCloseDescription,
 } from './AddForm.styled';
-import { Container } from 'components/GlobalStyles';
+
 
 
 export const AddForm = () => {
@@ -91,7 +91,7 @@ const events = useSelector(selectEvents);
 
     return (
       <>
-        <Container>
+        
           <NavButton to={backLinkHref}>
             <IconBack styled={{ with: 24, height: 24 }} />
             Back
@@ -207,7 +207,7 @@ const events = useSelector(selectEvents);
             </LabelInput>
             <ButtonAdd type="submit">Add event</ButtonAdd>
           </Form>
-        </Container>
+         
       </>
     );
 }
