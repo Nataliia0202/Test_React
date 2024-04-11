@@ -3,6 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 
 export const selectEvents = state => state.events.items;
 
+export const selectEventsWithOutLimit = state => state.events.itemsWithOutLimit;
 
 export const selectIsLoading = state => state.events.isLoading;
 

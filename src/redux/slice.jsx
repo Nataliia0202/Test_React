@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchEvents, addNewEvents, fetchEventDel} from './operations';
+import { fetchEvents, addNewEvents, fetchEventDel, fetchEventsWithOutLimit} from './operations';
 
 const handleRequest = state => {
   state.isLoading = true;
@@ -20,6 +20,7 @@ const EventsSlice = createSlice({
   name: 'events',
   initialState: {
     items: [],
+    itemsWithOutLimit: [],
     isLoading: false,
     error: null,
   },
@@ -34,6 +35,16 @@ const EventsSlice = createSlice({
       handleSuccess(state, action);
     },
     [fetchEvents.rejected](state, action) {
+      handleError(state, action);
+    },
+    [fetchEventsWithOutLimit.pending](state) {
+      handleRequest(state);
+    },
+    [fetchEventsWithOutLimit.fulfilled](state, action) {
+      state.itemsWithOutLimit = action.payload;
+      handleSuccess(state, action);
+    },
+    [fetchEventsWithOutLimit.rejected](state, action) {
       handleError(state, action);
     },
     [addNewEvents.pending](state) {

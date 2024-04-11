@@ -3,8 +3,8 @@
 import { EventsItem } from "./EventsItem";
 import { List, ListItem } from "./EventsItem.styled";
 import { useSelector, useDispatch } from 'react-redux';
-import { selectEvents, selectSearch } from 'redux/selector';
-import { fetchEvents } from "redux/operations";
+import { selectEvents, selectSearch, selectEventsWithOutLimit } from 'redux/selector';
+import { fetchEvents, fetchEventsWithOutLimit } from "redux/operations";
 import { useEffect } from "react";
 import Pagination from "components/Pagination";
 import { useState } from "react";
@@ -12,21 +12,25 @@ import { useState } from "react";
 
 export const EventList = () => {
   const events = useSelector(selectEvents);
+  const eventsAll = useSelector(selectEventsWithOutLimit)
   console.log(events);
+  console.log(eventsAll)
   const search = useSelector(selectSearch);
   const [currentPage, setCurrentPage] = useState(1);
  
   const dispatch = useDispatch();
 
-  // const lenghtEv = events.length;
-  // console.log(lenghtEv)
-  // const totalPage = Math.ceil(lenghtEv/8)
-  // console.log(totalPage)
+  const lenghtEv = eventsAll.length;
+  const totalPage = Math.ceil(lenghtEv/8)
 
   const handlePageChange = (selectedItem) => {
     setCurrentPage(selectedItem.selected + 1);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    dispatch(fetchEventsWithOutLimit());
+  }, [dispatch]);
   
   useEffect(() => {
     dispatch(fetchEvents({ search, currentPage}));
@@ -66,7 +70,7 @@ export const EventList = () => {
           )}
       </List>
       <Pagination 
-        pageCount={8}
+        pageCount={totalPage}
         pageRangeDisplayed={3}
         onPageChange={handlePageChange}
             />

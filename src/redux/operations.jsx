@@ -22,6 +22,21 @@ export const fetchEvents = createAsyncThunk(
   }
 );
 
+export const fetchEventsWithOutLimit = createAsyncThunk(
+  'events/fetchEventsWithOutLimit',
+  async (_, thunkApi) => {
+    
+    try {
+        const {data} = await axios.get('/events');
+        console.log(data)
+      return data;
+    } catch (error) {
+    
+      return thunkApi.rejectWithValue(error);
+    }
+  }
+);
+
 export const fetchEventDetails = createAsyncThunk(
   'events/fetchEventDetails',
   async (id, thunkApi) => {
