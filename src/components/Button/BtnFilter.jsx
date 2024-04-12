@@ -16,10 +16,6 @@ export const SimpleMenu =({text})=> {
    
     const events = useSelector(selectEvents);
  
-  
-
- 
-  
   const ev = events.map((event) => {
     return event.category
   })
@@ -27,15 +23,11 @@ export const SimpleMenu =({text})=> {
 const uniqueCategory = ev.filter(
   (event, index, array) => array.indexOf(event) === index
   );
-  
-
-
 
   const handleClick = event => {
     setAnchorEl(event.currentTarget);
     };
     
-
   const handleClose = ()=> {
     setAnchorEl(null);
     

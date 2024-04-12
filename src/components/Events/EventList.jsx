@@ -13,8 +13,8 @@ import { useState } from "react";
 export const EventList = () => {
   const events = useSelector(selectEvents);
   const eventsAll = useSelector(selectEventsWithOutLimit)
-  console.log(events);
-  console.log(eventsAll)
+  // console.log(events);
+  // console.log(eventsAll)
   const search = useSelector(selectSearch);
   const [currentPage, setCurrentPage] = useState(1);
  
@@ -69,11 +69,13 @@ export const EventList = () => {
             }
           )}
       </List>
+      {totalPage > 1 && 
       <Pagination 
         pageCount={totalPage}
         pageRangeDisplayed={3}
         onPageChange={handlePageChange}
-            />
+            />}
+      
     </>
   );
 };

@@ -4,7 +4,7 @@ import styles from "./Pagination.module.scss"
 
 export const Pagination = ({  onPageChange, ...props }) => {
   return (
-    <div>
+    <div className={styles.div}>
       <ReactPaginate
         className={styles.root}
         breakLabel="..."

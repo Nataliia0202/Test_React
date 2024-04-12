@@ -28,7 +28,6 @@ export const fetchEventsWithOutLimit = createAsyncThunk(
     
     try {
         const {data} = await axios.get('/events');
-        console.log(data)
       return data;
     } catch (error) {
     
@@ -68,7 +67,7 @@ export const fetchCategory = createAsyncThunk(
   'category/fetchCategory',
   async (categoryName, thunkApi) => {
     try {
-      const { data } = await axios.get(`/events?${categoryName}`);
+      const { data } = await axios.get(`/events?filter=${categoryName}`);
       console.log(data)
       return data;
     } catch (error) {
