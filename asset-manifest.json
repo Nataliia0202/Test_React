@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Test_React/static/css/main.dee0ea81.css",
-    "main.js": "/Test_React/static/js/main.26a500fc.js",
+    "main.css": "/Test_React/static/css/main.e21ef6d6.css",
+    "main.js": "/Test_React/static/js/main.dde88d09.js",
     "static/media/GeoWave22.png": "/Test_React/static/media/GeoWave22.cff35a10b1a4c6bb3b4f.png",
     "static/media/GeoWave2.png": "/Test_React/static/media/GeoWave2.3f3dda5ca3f6605f9103.png",
     "static/media/poppins-devanagari-400-normal.woff": "/Test_React/static/media/poppins-devanagari-400-normal.0e11b62db931f85340d4.woff",
@@ -17,11 +17,11 @@
     "static/media/poppins-latin-ext-400-normal.woff2": "/Test_React/static/media/poppins-latin-ext-400-normal.4f38b4331448d2313adc.woff2",
     "static/media/alata-vietnamese-400-normal.woff": "/Test_React/static/media/alata-vietnamese-400-normal.da2dd6b2459c5384bc0b.woff",
     "index.html": "/Test_React/index.html",
-    "main.dee0ea81.css.map": "/Test_React/static/css/main.dee0ea81.css.map",
-    "main.26a500fc.js.map": "/Test_React/static/js/main.26a500fc.js.map"
+    "main.e21ef6d6.css.map": "/Test_React/static/css/main.e21ef6d6.css.map",
+    "main.dde88d09.js.map": "/Test_React/static/js/main.dde88d09.js.map"
   },
   "entrypoints": [
-    "static/css/main.dee0ea81.css",
-    "static/js/main.26a500fc.js"
+    "static/css/main.e21ef6d6.css",
+    "static/js/main.dde88d09.js"
   ]
 }
