@@ -1,22 +1,24 @@
 
 import React from 'react';
-import {  useSelector } from 'react-redux';
+import {  useSelector, useDispatch } from 'react-redux';
 
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { IconFilter } from 'components/IconSearch';
 import { ButtonFilter, TextBtn } from './Button.styled';
-import { selectEvents} from 'redux/selector';
-
-
+import { selectEventsWithOutLimit} from 'redux/selector';
+import { setCategoryFilter } from 'redux/sliceFilter';
 
 
 export const SimpleMenu =({text})=> {
   const [anchorEl, setAnchorEl] = React.useState(null);
-   
-    const events = useSelector(selectEvents);
+  const dispatch = useDispatch();
+  
+  const eventsAll = useSelector(selectEventsWithOutLimit)
+  const categoryName = useSelector((state) => state.filters.categoryName);
+  console.log(categoryName)
  
-  const ev = events.map((event) => {
+  const ev = eventsAll.map((event) => {
     return event.category
   })
   
@@ -32,20 +34,23 @@ const uniqueCategory = ev.filter(
     setAnchorEl(null);
     
   };
-  const onClick =()=> {
-    
+  
+  const handleCategoryChange = (category) => {
+    dispatch(setCategoryFilter(category)); // Установка фильтра категории
     setAnchorEl(null);
   };
     
 
   return (
-    <div>
+    <>
       <ButtonFilter
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
       >
-        <TextBtn>{text}</TextBtn>
+        <TextBtn>
+          {text}
+        </TextBtn>
         <IconFilter />
       </ButtonFilter>
       <Menu
@@ -61,7 +66,7 @@ const uniqueCategory = ev.filter(
             return (
               <MenuItem
                 key={category}
-                onClick={onClick}
+                onClick={() => handleCategoryChange(category)}
                 style={{ borderBottom: '1px solid #ACA7C3' }}
               >
                 {category}
@@ -69,6 +74,7 @@ const uniqueCategory = ev.filter(
             );
           })}
       </Menu>
-    </div>
+      
+    </>
   );
 }

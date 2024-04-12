@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { EventsReducer } from './slice';
-import {searchReducer} from './sliceSearch'
+import {searchReducer} from './sliceSearch';
+import { filterReducer } from './sliceFilter';
 
 export const store = configureStore({
   reducer: {
     events: EventsReducer,
     search: searchReducer,
+    filters: filterReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

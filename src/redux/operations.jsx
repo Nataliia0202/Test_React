@@ -7,12 +7,12 @@ axios.defaults.baseURL = 'https://64ca905f700d50e3c70510c5.mockapi.io';
 export const fetchEvents = createAsyncThunk(
   'events/fetchEvents',
   async (params, thunkApi) => {
-    const { search, currentPage } = params;
+    const { search, currentPage, categoryName } = params;
     
     try {
       const limit = currentPage ? `?page=${currentPage}&limit=8` : "";
         const events = await axios.get(
-          `/events${limit}&search=${search}`
+          `/events${limit}&search=${search}&filter=${categoryName}`
         );
       return events.data;
     } catch (error) {
@@ -21,6 +21,20 @@ export const fetchEvents = createAsyncThunk(
     }
   }
 );
+
+// export const fetchCategory = createAsyncThunk(
+//   'category/fetchCategory',
+//   async (categoryName, thunkApi) => {
+//     try {
+//       const { data } = await axios.get(`/events?filter=${categoryName}`);
+//       console.log(data)
+//       return data;
+//     } catch (error) {
+//       toastError();
+//       return thunkApi.rejectWithValue(error);
+//     }
+//   }
+// );
 
 export const fetchEventsWithOutLimit = createAsyncThunk(
   'events/fetchEventsWithOutLimit',
@@ -63,19 +77,7 @@ export const fetchEventDel = createAsyncThunk(
   }
 );
 
-export const fetchCategory = createAsyncThunk(
-  'category/fetchCategory',
-  async (categoryName, thunkApi) => {
-    try {
-      const { data } = await axios.get(`/events?filter=${categoryName}`);
-      console.log(data)
-      return data;
-    } catch (error) {
-      toastError();
-      return thunkApi.rejectWithValue(error);
-    }
-  }
-);
+
 
 
 export const addNewEvents = createAsyncThunk(
